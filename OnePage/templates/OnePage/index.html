@@ -1,0 +1,236 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>SilvestreCode | Crie seu conteúdo digital</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    <!-- SimpleLightbox plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <link href="{% static 'path/to/lightbox.css' %}" rel="stylesheet" />
+</head>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top">SilvestreCode</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Transforme Suas Ideias em Experiências Digitais Incríveis</h1>
+                    <hr class="divider" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">Desenvolvimento de Sites, Blogs, OnePage e E-commerce com Foco em Resultados e Qualidade.</p>
+                    <a class="btn btn-primary btn-xl" href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Fale Conosco Agora</a>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- About-->
+        <section class="page-section bg-primary" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">Bem-vindo à SilvestreCode!</h2>
+                        <hr class="divider divider-light" />
+                        <p class="text-white-75 mb-4">
+                            Na SilvestreCode, somos especializados em criar soluções digitais que elevam sua presença online e impulsionam seu negócio. Oferecemos um portfólio completo de serviços, incluindo Desenvolvimento de Sites, Blogs, OnePage e E-commerce.
+                        </p>
+                        <p class="text-white-75 mb-4">
+                            <strong>Desenvolvimento de Sites</strong> Criamos sites personalizados que refletem a identidade da sua marca e atendem às necessidades específicas do seu negócio. Com design responsivo e funcionalidades avançadas, garantimos uma experiência de usuário envolvente e eficaz.</p>
+                        <p class="text-white-75 mb-4"><strong>Blogs</strong> : Desenvolvemos blogs que não apenas capturam a essência do seu conteúdo, mas também atraem e retêm leitores. Nossos blogs são otimizados para SEO e oferecem uma plataforma robusta para compartilhar conhecimento e engajar seu público.<p/>
+                        <p class="text-white-75 mb-4"><strong>OnePage</strong> : Para negócios que necessitam de uma presença online concisa e impactante, oferecemos soluções OnePage. Ideal para portfólios, lançamentos de produtos ou eventos, nossos designs são limpos, funcionais e visualmente atraentes.<p/>
+                        <p class="text-white-75 mb-4"><strong>E-commerce</strong> : Construímos lojas virtuais que facilitam a experiência de compra dos seus clientes. Com integração de pagamentos, gestão de inventário e design intuitivo, nossas soluções de e-commerce são projetadas para maximizar suas vendas e otimizar a gestão do seu negócio.<p/>
+                        
+                        <a class="btn btn-light btn-xl" href="{% url 'SobreNois' %}">Saiba mais sobre nossos serviços</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section>
+            <section class="page-section" id="services">
+                <div class="container px-4 px-lg-5">
+                    <h2 class="text-center mt-0">Nossos Serviços</h2>
+                    <hr class="divider" />
+                    <div class="row gx-4 gx-lg-5">
+                        <div class="col-lg-3 col-md-6 text-center">
+                            <div class="mt-5">
+                                <div class="mb-2"><i class="bi-house-door fs-1 text-primary"></i></div>
+                                <h3 class="h4 mb-2">Desenvolvimento de Sites</h3>
+                                <p class="text-muted mb-0">Criamos sites personalizados que atendem às suas necessidades e objetivos.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 text-center">
+                            <div class="mt-5">
+                                <div class="mb-2"><i class="bi-file-earmark-text fs-1 text-primary"></i></div>
+                                <h3 class="h4 mb-2">Criação de Blogs</h3>
+                                <p class="text-muted mb-0">Desenvolvemos blogs atraentes e funcionais para que você compartilhe seu conteúdo com o mundo.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 text-center">
+                            <div class="mt-5">
+                                <div class="mb-2"><i class="bi-file-earmark-code fs-1 text-primary"></i></div>
+                                <h3 class="h4 mb-2">Sites OnePage</h3>
+                                <p class="text-muted mb-0">Oferecemos soluções elegantes e eficazes para sites de uma única página que capturam a atenção.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 text-center">
+                            <div class="mt-5">
+                                <div class="mb-2"><i class="bi-cart fs-1 text-primary"></i></div>
+                                <h3 class="h4 mb-2">Desenvolvimento de E-commerce</h3>
+                                <p class="text-muted mb-0">Criamos lojas online completas, otimizadas para conversão e fáceis de gerenciar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Portfolio-->
+        <section class="page-section" id="portfolio">
+            <div class="container px-4 px-lg-5">
+                <div class="container-fluid p-0">
+                    <div class="row g-0">
+                        {% for item in portfolio_items %}
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="{{ item.thumbnail.url }}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
+                                <img class="img-fluid" src="{{ item.thumbnail.url }}" alt="{{ item.project_name }}"
+                                    style="width: 100%; height: 250px; object-fit: cover; object-position: center;" />
+                                <div class="portfolio-box-caption">
+                                    <div class="project-category text-white-50">{{ item.category }}</div>
+                                    <div class="project-name">{{ item.project_name }}</div>
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>    
+    
+        {% load widget_tweaks %}
+
+        <section class="page-section" id="contact">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-6 text-center">
+                        <h2 class="mt-0">Solicite Nosso Serviço</h2>
+                        <hr class="divider" />
+                        <p class="text-muted mb-5">Seu projeto digital começa aqui, descubra como podemos ajudar e entre em contato!</p>
+                    </div>
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                    <div class="col-lg-6">
+                        {% if messages %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {% for message in messages %}
+                                {{ message }}
+                            {% endfor %}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endif %}
+
+                    <form id="contactForm" method="post" action="{% url 'index' %}">
+                        {% csrf_token %}
+                        <!-- Nome completo input -->
+                        <div class="form-floating mb-3">
+                            {{ form.Nome_Completo|add_class:"form-control" }}
+                            <label for="{{ form.Nome_Completo.id_for_label }}">Nome completo</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">Um nome é necessário.</div>
+                        </div>
+                        <!-- Endereço de Email input -->
+                        <div class="form-floating mb-3">
+                            {{ form.Endereço_Email|add_class:"form-control" }}
+                            <label for="{{ form.Endereço_Email.id_for_label }}">Endereço de Email</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">Um email é necessário.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Email não é válido.</div>
+                        </div>
+                        <!-- Número de telefone input -->
+                        <div class="form-floating mb-3">
+                            {{ form.Numero_de_telefone|add_class:"form-control" }}
+                            <label for="{{ form.Numero_de_telefone.id_for_label }}">Número de telefone</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">Um número de telefone é necessário.</div>
+                        </div>
+                        <!-- Mensagem input -->
+                        <div class="form-floating mb-3">
+                            {{ form.mensagem|add_class:"form-control" }}
+                            <label for="{{ form.mensagem.id_for_label }}">Mensagem</label>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">Uma mensagem é necessária.</div>
+                        </div>
+                        <!-- Submit success message -->
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3">
+                                <div class="fw-bolder">Envio de formulário bem-sucedido!</div>
+                            </div>
+                        </div>
+                        <!-- Submit error message -->
+                        <div class="d-none" id="submitErrorMessage">
+                            <div class="text-center text-danger mb-3">Erro ao enviar a mensagem!</div>
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Enviar</button>
+                        </div>
+                    </form>
+                    
+                        
+                    </div>
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-4 text-center mb-5 mb-lg-0">
+                        <i class="bi-phone fs-2 mb-3 text-muted"></i>
+                        <div>+55 (43) 99634-1638</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - SilvestreCode</div></div>
+
+            <div class="container px-4 px-lg-5 pt-2"><div class="small text-center text-muted">Distributed By <a href="#">SilvestreCode</a>
+            </div></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="{% static 'path/to/lightbox.js' %}"></script>
+    </body>
+</html>
