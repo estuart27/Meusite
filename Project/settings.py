@@ -24,7 +24,7 @@ SECRET_KEY = '2m&e=73x6p_a@3rz8$&ohdp8*ox+d#9ek1^$a*5ddf@ee6e-k%'
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app', 'primeiro-site-oxd7-git-main-estuart-s-projects.vercel.app/', 'localhost', '127.0.0.1']
 
 # Application definition
 
