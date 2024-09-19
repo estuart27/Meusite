@@ -114,7 +114,7 @@
             </section>
         </section>
 
-        <!-- Portfolio-->
+        {% comment %} <!-- Portfolio-->
         <section class="page-section" id="portfolio">
             <div class="container px-4 px-lg-5">
                 <div class="container-fluid p-0">
@@ -134,9 +134,192 @@
                     </div>
                 </div>
             </div>
-        </section>    
+        </section>     {% endcomment %}
     
-        {% load widget_tweaks %}
+        {% load widget_tweaks %} 
+
+        <section class="page-section" id="portfolio">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">Portfolio</h2>
+                <hr class="divider" />
+                <div class="container-fluid p-0">
+                    <div class="row g-0">
+                        
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/1.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
+                                <div class="portfolio-box-inner">
+                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/1.jpg' %}" alt="{{ item.project_name }}" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Site</div>
+                                        <div class="project-name">{{ item.project_name }}</div>
+                                    </div>
+                                    <!-- Botão Visitar Site sobre a imagem -->
+                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/Cental/" target="_blank">Visitar Site</a>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/3.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
+                                <div class="portfolio-box-inner">
+                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/3.jpg' %}" alt="{{ item.project_name }}" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Site</div>
+                                        <div class="project-name">{{ item.project_name }}</div>
+                                    </div>
+                                    <!-- Botão Visitar Site sobre a imagem -->
+                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/boldo/" target="_blank">Visitar Site</a>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/4.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
+                                <div class="portfolio-box-inner">
+                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/4.jpg' %}" alt="{{ item.project_name }}" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Site</div>
+                                        <div class="project-name">{{ item.project_name }}</div>
+                                    </div>
+                                    <!-- Botão Visitar Site sobre a imagem -->
+                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/Newsers/" target="_blank">Visitar Site</a>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/5.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
+                                <div class="portfolio-box-inner">
+                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/5.jpg' %}" alt="{{ item.project_name }}" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Site</div>
+                                        <div class="project-name">{{ item.project_name }}</div>
+                                    </div>
+                                    <!-- Botão Visitar Site sobre a imagem -->
+                                    <a class="btn btn-primary portfolio-btn" href="*" target="_blank">Visitar Site</a>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/6.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
+                                <div class="portfolio-box-inner">
+                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/6.jpg' %}" alt="{{ item.project_name }}" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Site</div>
+                                        <div class="project-name">{{ item.project_name }}</div>
+                                    </div>
+                                    <!-- Botão Visitar Site sobre a imagem -->
+                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/furni/" target="_blank">Visitar Site</a>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/7.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
+                                <div class="portfolio-box-inner">
+                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/7.jpg' %}" alt="{{ item.project_name }}" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Site</div>
+                                        <div class="project-name">{{ item.project_name }}</div>
+                                    </div>
+                                    <!-- Botão Visitar Site sobre a imagem -->
+                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/soffer/" target="_blank">Visitar Site</a>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/8.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
+                                <div class="portfolio-box-inner">
+                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/8.jpg' %}" alt="{{ item.project_name }}" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Site</div>
+                                        <div class="project-name">{{ item.project_name }}</div>
+                                    </div>
+                                    <!-- Botão Visitar Site sobre a imagem -->
+                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/Uoni/" target="_blank">Visitar Site</a>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/9.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
+                                <div class="portfolio-box-inner">
+                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/9.jpg' %}" alt="{{ item.project_name }}" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Site</div>
+                                        <div class="project-name">{{ item.project_name }}</div>
+                                    </div>
+                                    <!-- Botão Visitar Site sobre a imagem -->
+                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/vintagefur/" target="_blank">Visitar Site</a>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/10.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
+                                <div class="portfolio-box-inner">
+                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/10.jpg' %}" alt="{{ item.project_name }}" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Site</div>
+                                        <div class="project-name">{{ item.project_name }}</div>
+                                    </div>
+                                    <!-- Botão Visitar Site sobre a imagem -->
+                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/waggy/" target="_blank">Visitar Site</a>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/11.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
+                                <div class="portfolio-box-inner">
+                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/11.jpg' %}" alt="{{ item.project_name }}" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Site</div>
+                                        <div class="project-name">{{ item.project_name }}</div>
+                                    </div>
+                                    <!-- Botão Visitar Site sobre a imagem -->
+                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/electricca/" target="_blank">Visitar Site</a>
+                                </div>
+                            </a>
+                        </div>
+
+                        
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/12.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
+                                <div class="portfolio-box-inner">
+                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/12.jpg' %}" alt="{{ item.project_name }}" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Site</div>
+                                        <div class="project-name">{{ item.project_name }}</div>
+                                    </div>
+                                    <!-- Botão Visitar Site sobre a imagem -->
+                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/aranyak/v1.0.0/" target="_blank">Visitar Site</a>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/13.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
+                                <div class="portfolio-box-inner">
+                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/13.jpg' %}" alt="{{ item.project_name }}" />
+                                    <div class="portfolio-box-caption">
+                                        <div class="project-category text-white-50">Site</div>
+                                        <div class="project-name">{{ item.project_name }}</div>
+                                    </div>
+                                    <!-- Botão Visitar Site sobre a imagem -->
+                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/WaterLand/" target="_blank">Visitar Site</a>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
 
         <section class="page-section" id="contact">
             <div class="container px-4 px-lg-5">
@@ -232,5 +415,47 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
         <script src="{% static 'path/to/lightbox.js' %}"></script>
+        <style>
+            .portfolio-box-inner {
+                position: relative;
+                display: inline-block;
+            }
+        
+            .portfolio-box-inner img {
+                width: 100%;
+                height: 250px; /* Define a altura fixa */
+                object-fit: cover; /* Faz com que a imagem cubra a área do contêiner */
+                object-position: center; /* Centraliza a imagem */
+            }
+        
+            .portfolio-box-caption {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.5);
+                color: #fff;
+                padding: 15px;
+                text-align: center;
+            }
+        
+            .portfolio-btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 10;
+                padding: 10px 20px;
+                background-color: #5F9F9F; /* Cor do botão atualizada */
+                color: #fff;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+        
+            .portfolio-btn:hover {
+                background-color: #4a7d7d; /* Cor de hover mais escura para contraste */
+            }
+        </style>
     </body>
 </html>
