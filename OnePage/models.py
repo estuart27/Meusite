@@ -9,13 +9,20 @@ class Mensagem(models.Model):
     def __str__(self):
         return f"{self.Nome_Completo} - {self.Endereço_Email}"
 
-# models.py
-from django.db import models
-
 class PortfolioItem(models.Model):
-    category = models.CharField(max_length=100)
+    CATEGORY_CHOICES = [
+        ('e-commerce', 'E-commerce'),
+        ('blog', 'Blog'),
+        ('onepage', 'OnePage'),
+        ('landing page', 'Landing Page'),
+        ('outros', 'Outros'),
+    ]
+    
+    category = models.CharField(max_length=100, choices=CATEGORY_CHOICES)
     project_name = models.CharField(max_length=200)
     thumbnail = models.ImageField(upload_to='portfolio/thumbnails/')
+    link = models.URLField(max_length=200, blank=True, null=True)  # Adicionando o campo para o link do projeto
 
     def __str__(self):
         return self.project_name
+

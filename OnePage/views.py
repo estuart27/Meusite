@@ -10,9 +10,9 @@ def index(request):
         form = ContactRequestForm(request.POST)
         if form.is_valid():
             form.save()
-            print("Dados salvos:", form.cleaned_data)  # Adicione isso para depuração
+            print("Dados salvos:", form.cleaned_data)  # Para depuração
             messages.success(request, 'Sua mensagem foi enviada com sucesso!')
-            return redirect('index')  # Aqui, 'index' é o nome da URL para a view `index`
+            return redirect('index')  # Redireciona para a URL 'index' após o envio
     else:
         form = ContactRequestForm()
 
@@ -26,8 +26,16 @@ def index(request):
 
 
 
+def portfolio(request):
+    portfolio_items = PortfolioItem.objects.all()
+    return render(request, 'portfolio.html', {'portfolio_items': portfolio_items})
 
-def Sobre(request):
-    return render(request, 'OnePage/SobreNois.html')
+
+def sobrenois(request):
+    portfolio_items = PortfolioItem.objects.all()  # Obtém todos os itens do portfólio
+    return render(request, 'OnePage/portfolio-details.html', {'portfolio_items': portfolio_items})
 
 
+# def portfolio_details(request):
+#     portfolio_items = PortfolioItem.objects.all()  # Pega todos os itens do portfólio
+#     return render(request, 'portfolio_details.html', {'portfolio_items': portfolio_items})

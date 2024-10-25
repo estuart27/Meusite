@@ -12,7 +12,7 @@ SECRET_KEY = '2m&e=73x6p_a@3rz8$&ohdp8*ox+d#9ek1^$a*5ddf@ee6e-k%'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -64,24 +64,22 @@ ASGI_APPLICATION = 'meuprojeto.asgi.application'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',  # Nome do banco de dados
+#         'USER': 'postgres.tpcdjmjvhqlypcxnlhrk',  # Usuário do banco de dados
+#         'PASSWORD': 'estuart123040506',  # Insira a senha do banco que você configurou no Supabase
+#         'HOST': 'aws-0-sa-east-1.pooler.supabase.com',  # Host do banco de dados
+#         'PORT': '6543',  # Porta
 #     }
 # }
 
+# DATABASES configuration for local SQLite database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',  # Nome do banco de dados
-        'USER': 'postgres.tpcdjmjvhqlypcxnlhrk',  # Usuário do banco de dados
-        'PASSWORD': 'estuart123040506',  # Insira a senha do banco que você configurou no Supabase
-        'HOST': 'aws-0-sa-east-1.pooler.supabase.com',  # Host do banco de dados
-        'PORT': '6543',  # Porta
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # O arquivo de banco de dados será armazenado aqui
     }
 }
 
@@ -126,7 +124,10 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',  # Aponta para a pasta static na raiz do projeto
 ]
 
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 # Configurações de arquivos de mídia
 MEDIA_URL = '/media/'  # URL base para servir arquivos de mídia

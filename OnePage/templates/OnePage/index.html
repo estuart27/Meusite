@@ -1,473 +1,656 @@
 {% load static %}
 
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>SilvestreCode | Crie seu conteúdo digital</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}" />
-    <!-- Bootstrap Icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-    <!-- SimpleLightbox plugin CSS-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
-    <link href="{% static 'path/to/lightbox.css' %}" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Pagina Inicial | Silvestre.Code</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">  
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Tempo
+  * Template URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
-<body id="page-top">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#page-top">SilvestreCode</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Silvestre.Code</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          {% comment %} <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
                 </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- Masthead-->
-    <header class="masthead">
-        <div class="container px-4 px-lg-5 h-100">
-            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">Transforme Suas Ideias em Experiências Digitais Incríveis</h1>
-                    <hr class="divider" />
-                </div>
-                <div class="col-lg-8 align-self-baseline">
-                    <p class="text-white-75 mb-5">Desenvolvimento de Sites, Blogs, OnePage e E-commerce com Foco em Resultados e Qualidade.</p>
-                    <a class="btn btn-primary btn-xl" href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Fale Conosco Agora</a>
-                </div>
-            </div>
-        </div>
-    </header>
-        <!-- About-->
-        <section class="page-section bg-primary" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">Bem-vindo à SilvestreCode!</h2>
-                        <hr class="divider divider-light" />
-                        <p class="text-white-75 mb-4">
-                            Na SilvestreCode, somos especializados em criar soluções digitais que elevam sua presença online e impulsionam seu negócio. Oferecemos um portfólio completo de serviços, incluindo Desenvolvimento de Sites, Blogs, OnePage e E-commerce.
-                        </p>
-                        <p class="text-white-75 mb-4">
-                            <strong>Desenvolvimento de Sites</strong> Criamos sites personalizados que refletem a identidade da sua marca e atendem às necessidades específicas do seu negócio. Com design responsivo e funcionalidades avançadas, garantimos uma experiência de usuário envolvente e eficaz.</p>
-                        <p class="text-white-75 mb-4"><strong>Blogs</strong> : Desenvolvemos blogs que não apenas capturam a essência do seu conteúdo, mas também atraem e retêm leitores. Nossos blogs são otimizados para SEO e oferecem uma plataforma robusta para compartilhar conhecimento e engajar seu público.<p/>
-                        <p class="text-white-75 mb-4"><strong>OnePage</strong> : Para negócios que necessitam de uma presença online concisa e impactante, oferecemos soluções OnePage. Ideal para portfólios, lançamentos de produtos ou eventos, nossos designs são limpos, funcionais e visualmente atraentes.<p/>
-                        <p class="text-white-75 mb-4"><strong>E-commerce</strong> : Construímos lojas virtuais que facilitam a experiência de compra dos seus clientes. Com integração de pagamentos, gestão de inventário e design intuitivo, nossas soluções de e-commerce são projetadas para maximizar suas vendas e otimizar a gestão do seu negócio.<p/>
-                        
-                        <a class="btn btn-light btn-xl" href="{% url 'SobreNois' %}">Saiba mais sobre nossos serviços</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li> {% endcomment %}
+          <li><a href="#contact">Contato</a></li>
+          <li><a href="{% url 'sobrenois' %}">Quem Somos</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
 
-        <!-- Services -->
-        <section>
-            <section class="page-section" id="services">
-                <div class="container px-4 px-lg-5">
-                    <h2 class="text-center mt-0">Nossos Serviços</h2>
-                    <hr class="divider" />
-                    <div class="row gx-4 gx-lg-5">
-                        <div class="col-lg-3 col-md-6 text-center">
-                            <div class="mt-5">
-                                <div class="mb-2"><i class="bi-house-door fs-1 text-primary"></i></div>
-                                <h3 class="h4 mb-2">Desenvolvimento de Sites</h3>
-                                <p class="text-muted mb-0">Criamos sites personalizados que atendem às suas necessidades e objetivos.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 text-center">
-                            <div class="mt-5">
-                                <div class="mb-2"><i class="bi-file-earmark-text fs-1 text-primary"></i></div>
-                                <h3 class="h4 mb-2">Criação de Blogs</h3>
-                                <p class="text-muted mb-0">Desenvolvemos blogs atraentes e funcionais para que você compartilhe seu conteúdo com o mundo.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 text-center">
-                            <div class="mt-5">
-                                <div class="mb-2"><i class="bi-file-earmark-code fs-1 text-primary"></i></div>
-                                <h3 class="h4 mb-2">Sites OnePage</h3>
-                                <p class="text-muted mb-0">Oferecemos soluções elegantes e eficazes para sites de uma única página que capturam a atenção.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 text-center">
-                            <div class="mt-5">
-                                <div class="mb-2"><i class="bi-cart fs-1 text-primary"></i></div>
-                                <h3 class="h4 mb-2">Desenvolvimento de E-commerce</h3>
-                                <p class="text-muted mb-0">Criamos lojas online completas, otimizadas para conversão e fáceis de gerenciar.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </section>
+    </div>
+  </header>
 
-        {% comment %} <!-- Portfolio-->
-        <section class="page-section" id="portfolio">
-            <div class="container px-4 px-lg-5">
-                <div class="container-fluid p-0">
-                    <div class="row g-0">
-                        {% for item in portfolio_items %}
-                        <div class="col-lg-4 col-sm-6">
-                            <a class="portfolio-box" href="{{ item.thumbnail.url }}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
-                                <img class="img-fluid" src="{{ item.thumbnail.url }}" alt="{{ item.project_name }}"
-                                    style="width: 100%; height: 250px; object-fit: cover; object-position: center;" />
-                                <div class="portfolio-box-caption">
-                                    <div class="project-category text-white-50">{{ item.category }}</div>
-                                    <div class="project-name">{{ item.project_name }}</div>
-                                </div>
-                            </a>
-                        </div>
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="{% static 'assets/img/hero-bg.jpg'%}" alt="" data-aos="fade-in">
+
+      <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h2>Transforme Suas Ideias em Experiências Digitais Incríveis</h2>
+            <p>Desenvolvimento de Sites, Blogs, OnePage e E-commerce com Foco em Resultados e Qualidade.</p>
+            <a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?" class="btn-get-started">Fale Conosco Agora</a>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>SOBRE</h2>
+        <p><span>Sobre</span> <span class="description-title">Nois<br></span></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+          <div class="content col-xl-5 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
+            <h3>Porque contratar nossos serviços?</h3>
+            <p>
+              Oferecemos soluções digitais que fortalecem sua presença online. Com nossos sites e e-commerces, você atrai mais clientes e aumenta suas vendas, tudo com um design profissional e funcional.            </p>
+            <a href="{% url 'sobrenois' %}" class="about-btn align-self-center align-self-xl-start"><span>SOBRE NÓIS</span> <i class="bi bi-chevron-right"></i></a>
+          </div>
+
+          <div class="col-xl-7" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4">
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi-house-door fs-1 "></i>
+                <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?"  class="stretched-link">Desenvolvimento de Sites</a></h4>
+                <p>Criamos sites personalizados que atendem às suas necessidades e objetivos.</p>
+              </div><!-- Icon-Box -->
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi-file-earmark-text fs-1"></i>
+                <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?"  class="stretched-link">Automatizar tarefas</a></h4>
+                <p>
+                  A automação desempenha um papel fundamental na modernização dos negócios, permitindo que tarefas repetitivas sejam realizadas com eficiência e precisão. 
+                </p>
+              </div><!-- Icon-Box -->
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi-file-earmark-code fs-1"></i>
+                <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?"  class="stretched-link">Sites OnePage </a></h4>
+                <p>Oferecemos soluções elegantes e eficazes para sites de uma única página que capturam a atenção.</p>
+              </div><!-- Icon-Box -->
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi-cart fs-1"></i>
+                <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?"  class="stretched-link">Desenvolvimento de E-commerce</a></h4>
+                <p>Criamos lojas online completas, otimizadas para conversão e fáceis de gerenciar.</p>
+              </div><!-- Icon-Box -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>SERVIÇOS</h2>
+        <p>Confira nossos <span class="description-title">serviços</span></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-activity icon"></i></div>
+              <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?"  class="stretched-link">Experiência Personalizada</a></h4>
+              <p>Projetos adaptados às necessidades específicas do seu negócio</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
+              <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?"  class="stretched-link">Design Responsivo</a></h4>
+              <p>Nossos sites funcionam perfeitamente em qualquer dispositivo</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-currency-dollar icon"></i></div>
+              <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?"  class="stretched-link">Custo-Benefício</a></h4>
+              <p>Oferecemos serviços de alta qualidade a preços competitivos, garantindo que você obtenha o melhor retorno sobre o seu investimento</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-clock icon"></i></div>
+              <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?"  class="stretched-link">Entrega Rápida</a></h4>
+              <p>Sabemos que tempo é essencial. Por isso, entregamos seu site ou loja virtual dentro do prazo, sem comprometer a qualidade</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-lightbulb icon"></i></div>
+              <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?"  class="stretched-link">Inovação e Atualização Constante</a></h4>
+              <p>Estamos sempre atualizados com as últimas tendências e tecnologias, entregando sites modernos e prontos para o futuro digital</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-person-check icon"></i></div>
+              <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?" class="stretched-link">Suporte Técnico Contínuo</a></h4>
+              <p>Após o lançamento, você continua contando com nossa equipe para atualizações, manutenção e suporte, garantindo que seu site funcione sempre da melhor forma</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-arrow-repeat icon"></i></div>
+              <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?"  class="stretched-link">Foco em Conversão</a></h4>
+              <p>Nossos e-commerces são desenhados para maximizar suas vendas, com navegação otimizada, processos de compra intuitivos e segurança garantida</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-headset icon"></i></div>
+              <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?" class="stretched-link"> Atendimento Ágil e Eficiente</a></h4>
+              <p>Nossa equipe está sempre disponível para atender suas demandas, com respostas rápidas e suporte em todas as etapas do projeto</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+      <img src="{% static 'assets/img/cta-bg.jpg'%}" alt="">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>Chamada para ação</h3>
+              <p>Pronto para levar seu negócio ao próximo nível? Entre em contato conosco e descubra como nossas soluções digitais podem transformar sua presença online!</p>
+              <a class="cta-btn" href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?" >Contratar serviços</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p><span>Veja nosso</span> <span class="description-title">Portfolio</span></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-e-commerce">E-commerce</li>
+            <li data-filter=".filter-blog">Blog</li>
+            <li data-filter=".filter-onepage">OnePage</li>
+            <li data-filter=".filter-landing-page">Landing Page</li>
+            <li data-filter=".filter-outros">Outros</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <!-- Iterating through portfolio items -->
+            {% for item in portfolio_items %}
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ item.category|slugify }}">
+                <img src="{{ item.thumbnail.url }}" class="img-fluid" alt="{{ item.project_name }}">
+                <div class="portfolio-info">
+                  <h4>{{ item.project_name }}</h4>
+                  <p>{{ item.get_category_display }}</p>
+                  <a href="{{ item.thumbnail.url }}" title="{{ item.project_name }}" data-gallery="portfolio-gallery-{{ item.category }}" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                  </a>
+                  {% comment %} <a href="portfolio-details.html" title="More Details" class="details-link"> {% endcomment %}
+                    <i class="bi bi-link-45deg"></i>
+                  </a>
+                  {% if item.link %}
+                    <a href="{{ item.link }}" title="Visit Project" class="project-link" target="_blank">
+                      <i class="bi bi-box-arrow-up-right"></i> Visit Project
+                    </a>
+                  {% endif %}
+                </div>
+              </div><!-- End Portfolio Item -->
+            {% endfor %}
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>PERGUNTAS FREQUENTES</h2>
+        <p><span>Título da Seção</span> <span class="description-title">Desenvolvimento</span></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="faq-container">
+
+              <div class="faq-item faq-active">
+                <h3>Quanto tempo leva para criar meu site ou e-commerce?</h3>
+                <div class="faq-content">
+                  <p>O prazo de entrega varia conforme a complexidade do projeto, mas geralmente leva entre 2 a 6 semanas. Nós trabalhamos em colaboração com você em cada etapa, garantindo que suas expectativas sejam atendidas.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>Quais são os custos envolvidos na criação de um site?</h3>
+                <div class="faq-content">
+                  <p> O custo depende das funcionalidades e do tipo de site que você deseja. Oferecemos pacotes personalizados que se ajustam ao seu orçamento. Entre em contato para um orçamento gratuito e sem compromisso</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>Posso atualizar o conteúdo do meu site depois que ele for lançado?</h3>
+                <div class="faq-content">
+                  <p> Sim! Embora todos os nossos sites sejam desenvolvidos para que você possa atualizar o conteúdo facilmente, também oferecemos serviços de manutenção contínua. Isso significa que, se preferir, você pode contar conosco para realizar atualizações, garantir que seu site esteja sempre atualizado e funcionando perfeitamente, sem se preocupar com nada.
+                  </p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>O site será responsivo e funcionará em dispositivos móveis?</h3>
+                <div class="faq-content">
+                  <p>Absolutamente! Todos os nossos sites são projetados para serem responsivos, garantindo que funcionem perfeitamente em qualquer dispositivo, seja desktop, tablet ou smartphone.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>Como funciona o suporte após a entrega do site?</h3>
+                <div class="faq-content">
+                  <p> Oferecemos suporte contínuo após o lançamento do seu site, incluindo manutenção, atualizações e assistência técnica. Você pode contar conosco sempre que precisar!</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div><!-- End Faq Column-->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Contato</h2>
+      <p><span>Precisa de ajuda? </span> <span class="description-title">Entre em contato conosco<br></span></p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+        <!-- You can re-enable Google Maps here if needed -->
+      </div><!-- End Google Maps -->
+
+      <div class="row gy-4">
+
+        <div class="col-lg-4">
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <i class="bi bi-instagram"></i>
+            <div>
+              <h3>Instagram</h3>
+              <p>@estuartsilvestre24</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <i class="bi bi-telephone flex-shrink-0"></i>
+            <div>
+              <h3>Telefone</h3>
+              <p>+55 (43) 996341638</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+            <i class="bi bi-envelope flex-shrink-0"></i>
+            <div>
+              <h3>Email</h3>
+              <p>Estuartmatheus11@gmail.com</p>
+            </div>
+          </div><!-- End Info Item -->
+
+        </div>
+
+        <div class="col-lg-8">
+          <form id="contact-form" method="post" class="" data-aos="fade-up" data-aos-delay="200">
+            {% csrf_token %}
+            <div class="row gy-4">
+                <div class="col-md-6">
+                    {{ form.Nome_Completo.label_tag }}  <!-- Label para o campo Nome -->
+                    {{ form.Nome_Completo }}            <!-- Input do campo Nome -->
+                    {% if form.Nome_Completo.errors %}
+                        <div class="error-message">{{ form.Nome_Completo.errors }}</div>
+                    {% endif %}
+                </div>
+        
+                <div class="col-md-6">
+                    {{ form.Endereço_Email.label_tag }}  <!-- Label para o campo Email -->
+                    {{ form.Endereço_Email }}            <!-- Input do campo Email -->
+                    {% if form.Endereço_Email.errors %}
+                        <div class="error-message">{{ form.Endereço_Email.errors }}</div>
+                    {% endif %}
+                </div>
+        
+                <div class="col-md-6">
+                    {{ form.Numero_de_telefone.label_tag }}  <!-- Label para o campo Telefone -->
+                    {{ form.Numero_de_telefone }}            <!-- Input do campo Telefone -->
+                    {% if form.Numero_de_telefone.errors %}
+                        <div class="error-message">{{ form.Numero_de_telefone.errors }}</div>
+                    {% endif %}
+                </div>
+        
+                <div class="col-md-12">
+                    {{ form.mensagem.label_tag }}  <!-- Label para o campo Mensagem -->
+                    {{ form.mensagem }}            <!-- Textarea para a mensagem -->
+                    {% if form.mensagem.errors %}
+                        <div class="error-message">{{ form.mensagem.errors }}</div>
+                    {% endif %}
+                </div>
+
+                {% if messages %}
+                    <div class="messages">
+                        {% for message in messages %}
+                            <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">
+                                {{ message }}
+                            </div>
                         {% endfor %}
                     </div>
+                {% endif %}
+        
+                <div class="col-md-12 text-center">
+                    <div class="loading" style="display:none;">Carregando...</div>
+                    <div class="error-message" style="display:none;">Erro ao enviar a mensagem!</div>
+                    <div class="sent-message" style="display:none;">Sua mensagem foi enviada com sucesso. Obrigado!</div>
+        
+                    <button type="submit">Enviar Mensagem</button>
                 </div>
             </div>
-        </section>     {% endcomment %}
-    
-        {% load widget_tweaks %} 
+        </form>
+      </div>
+      
 
-        <section class="page-section" id="portfolio">
-            <div class="container px-4 px-lg-5">
-                <h2 class="text-center mt-0">Portfolio</h2>
-                <hr class="divider" />
-                <div class="container-fluid p-0">
-                    <div class="row g-0">
-                        
-                        <div class="col-lg-4 col-sm-6">
-                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/1.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
-                                <div class="portfolio-box-inner">
-                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/1.jpg' %}" alt="{{ item.project_name }}" />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">Site</div>
-                                        <div class="project-name">{{ item.project_name }}</div>
-                                    </div>
-                                    <!-- Botão Visitar Site sobre a imagem -->
-                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/Cental/" target="_blank">Visitar Site</a>
-                                </div>
-                            </a>
-                        </div>
+      </div>
 
-                        <div class="col-lg-4 col-sm-6">
-                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/3.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
-                                <div class="portfolio-box-inner">
-                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/3.jpg' %}" alt="{{ item.project_name }}" />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">Site</div>
-                                        <div class="project-name">{{ item.project_name }}</div>
-                                    </div>
-                                    <!-- Botão Visitar Site sobre a imagem -->
-                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/boldo/" target="_blank">Visitar Site</a>
-                                </div>
-                            </a>
-                        </div>
+    </div>
+  </section>
 
-                        <div class="col-lg-4 col-sm-6">
-                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/4.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
-                                <div class="portfolio-box-inner">
-                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/4.jpg' %}" alt="{{ item.project_name }}" />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">Site</div>
-                                        <div class="project-name">{{ item.project_name }}</div>
-                                    </div>
-                                    <!-- Botão Visitar Site sobre a imagem -->
-                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/Newsers/" target="_blank">Visitar Site</a>
-                                </div>
-                            </a>
-                        </div>
 
-                        <div class="col-lg-4 col-sm-6">
-                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/5.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
-                                <div class="portfolio-box-inner">
-                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/5.jpg' %}" alt="{{ item.project_name }}" />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">Site</div>
-                                        <div class="project-name">{{ item.project_name }}</div>
-                                    </div>
-                                    <!-- Botão Visitar Site sobre a imagem -->
-                                    <a class="btn btn-primary portfolio-btn" href="*" target="_blank">Visitar Site</a>
-                                </div>
-                            </a>
-                        </div>
 
-                        <div class="col-lg-4 col-sm-6">
-                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/6.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
-                                <div class="portfolio-box-inner">
-                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/6.jpg' %}" alt="{{ item.project_name }}" />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">Site</div>
-                                        <div class="project-name">{{ item.project_name }}</div>
-                                    </div>
-                                    <!-- Botão Visitar Site sobre a imagem -->
-                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/furni/" target="_blank">Visitar Site</a>
-                                </div>
-                            </a>
-                        </div>
+        </div>
 
-                        <div class="col-lg-4 col-sm-6">
-                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/7.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
-                                <div class="portfolio-box-inner">
-                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/7.jpg' %}" alt="{{ item.project_name }}" />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">Site</div>
-                                        <div class="project-name">{{ item.project_name }}</div>
-                                    </div>
-                                    <!-- Botão Visitar Site sobre a imagem -->
-                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/soffer/" target="_blank">Visitar Site</a>
-                                </div>
-                            </a>
-                        </div>
+      </div>
 
-                        <div class="col-lg-4 col-sm-6">
-                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/8.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
-                                <div class="portfolio-box-inner">
-                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/8.jpg' %}" alt="{{ item.project_name }}" />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">Site</div>
-                                        <div class="project-name">{{ item.project_name }}</div>
-                                    </div>
-                                    <!-- Botão Visitar Site sobre a imagem -->
-                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/Uoni/" target="_blank">Visitar Site</a>
-                                </div>
-                            </a>
-                        </div>
+    </section><!-- /Contact Section -->
 
-                        <div class="col-lg-4 col-sm-6">
-                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/9.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
-                                <div class="portfolio-box-inner">
-                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/9.jpg' %}" alt="{{ item.project_name }}" />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">Site</div>
-                                        <div class="project-name">{{ item.project_name }}</div>
-                                    </div>
-                                    <!-- Botão Visitar Site sobre a imagem -->
-                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/vintagefur/" target="_blank">Visitar Site</a>
-                                </div>
-                            </a>
-                        </div>
+  </main>
 
-                        <div class="col-lg-4 col-sm-6">
-                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/10.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
-                                <div class="portfolio-box-inner">
-                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/10.jpg' %}" alt="{{ item.project_name }}" />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">Site</div>
-                                        <div class="project-name">{{ item.project_name }}</div>
-                                    </div>
-                                    <!-- Botão Visitar Site sobre a imagem -->
-                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/waggy/" target="_blank">Visitar Site</a>
-                                </div>
-                            </a>
-                        </div>
+  <footer id="footer" class="footer dark-background">
 
-                        <div class="col-lg-4 col-sm-6">
-                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/11.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
-                                <div class="portfolio-box-inner">
-                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/11.jpg' %}" alt="{{ item.project_name }}" />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">Site</div>
-                                        <div class="project-name">{{ item.project_name }}</div>
-                                    </div>
-                                    <!-- Botão Visitar Site sobre a imagem -->
-                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/electricca/" target="_blank">Visitar Site</a>
-                                </div>
-                            </a>
-                        </div>
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">SILVESTRE.CODE</span>
+          </a>
+          <p>
+            Digitalizar seu negócio amplia seu alcance, melhora a eficiência e facilita o atendimento. Com a presença online, você se mantém competitivo e acessa novas oportunidades de crescimento.
+          </p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/estuartsilvestre24"><i class="bi bi-instagram"></i></a>
+            <a href="https://wa.me/5543996341638"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
 
-                        
-                        <div class="col-lg-4 col-sm-6">
-                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/12.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
-                                <div class="portfolio-box-inner">
-                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/12.jpg' %}" alt="{{ item.project_name }}" />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">Site</div>
-                                        <div class="project-name">{{ item.project_name }}</div>
-                                    </div>
-                                    <!-- Botão Visitar Site sobre a imagem -->
-                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/aranyak/v1.0.0/" target="_blank">Visitar Site</a>
-                                </div>
-                            </a>
-                        </div>
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
 
-                        <div class="col-lg-4 col-sm-6">
-                            <a class="portfolio-box" href="{% static 'assets/img/portfolio/13.jpg' %}" title="{{ item.project_name }}" data-lightbox="portfolio" data-title="{{ item.project_name }}">
-                                <div class="portfolio-box-inner">
-                                    <img class="img-fluid" src="{% static 'assets/img/portfolio/13.jpg' %}" alt="{{ item.project_name }}" />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">Site</div>
-                                        <div class="project-name">{{ item.project_name }}</div>
-                                    </div>
-                                    <!-- Botão Visitar Site sobre a imagem -->
-                                    <a class="btn btn-primary portfolio-btn" href="https://themewagon.github.io/WaterLand/" target="_blank">Visitar Site</a>
-                                </div>
-                            </a>
-                        </div>
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Outros Serviços</h4>
+          <ul>
+            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Web Design</a></li>
+            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Trafego Pago</a></li>
+            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Chatbot</a></li>
+            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Google Meu Negocio</a></li>
+            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Automação</a></li>
+          </ul>
+        </div>
 
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contato</h4>
+          <p></p>
+          <p class="mt-4"><strong>Telefone:</strong> <span>+55 (43) 99634-1638</span></p>
+          <p><strong>Email:</strong> <span>estuartsilvestre24@gmail.com</span></p>
+        </div>
 
-        <section class="page-section" id="contact">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 col-xl-6 text-center">
-                        <h2 class="mt-0">Solicite Nosso Serviço</h2>
-                        <hr class="divider" />
-                        <p class="text-muted mb-5">Seu projeto digital começa aqui, descubra como podemos ajudar e entre em contato!</p>
-                    </div>
-                </div>
-                <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
-                    <div class="col-lg-6">
-                        {% if messages %}
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            {% for message in messages %}
-                                {{ message }}
-                            {% endfor %}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    {% endif %}
+      </div>
+    </div>
 
-                    <form id="contactForm" method="post" action="{% url 'index' %}">
-                        {% csrf_token %}
-                        <!-- Nome completo input -->
-                        <div class="form-floating mb-3">
-                            {{ form.Nome_Completo|add_class:"form-control" }}
-                            <label for="{{ form.Nome_Completo.id_for_label }}">Nome completo</label>
-                            <div class="invalid-feedback" data-sb-feedback="name:required">Um nome é necessário.</div>
-                        </div>
-                        <!-- Endereço de Email input -->
-                        <div class="form-floating mb-3">
-                            {{ form.Endereço_Email|add_class:"form-control" }}
-                            <label for="{{ form.Endereço_Email.id_for_label }}">Endereço de Email</label>
-                            <div class="invalid-feedback" data-sb-feedback="email:required">Um email é necessário.</div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">Email não é válido.</div>
-                        </div>
-                        <!-- Número de telefone input -->
-                        <div class="form-floating mb-3">
-                            {{ form.Numero_de_telefone|add_class:"form-control" }}
-                            <label for="{{ form.Numero_de_telefone.id_for_label }}">Número de telefone</label>
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">Um número de telefone é necessário.</div>
-                        </div>
-                        <!-- Mensagem input -->
-                        <div class="form-floating mb-3">
-                            {{ form.mensagem|add_class:"form-control" }}
-                            <label for="{{ form.mensagem.id_for_label }}">Mensagem</label>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">Uma mensagem é necessária.</div>
-                        </div>
-                        <!-- Submit success message -->
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3">
-                                <div class="fw-bolder">Envio de formulário bem-sucedido!</div>
-                            </div>
-                        </div>
-                        <!-- Submit error message -->
-                        <div class="d-none" id="submitErrorMessage">
-                            <div class="text-center text-danger mb-3">Erro ao enviar a mensagem!</div>
-                        </div>
-                        <!-- Submit Button -->
-                        <div class="d-grid">
-                            <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Enviar</button>
-                        </div>
-                    </form>
-                    
-                        
-                    </div>
-                </div>
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-4 text-center mb-5 mb-lg-0">
-                        <!-- WhatsApp Icon -->
-                        <i class="bi-whatsapp fs-2 mb-3 text-muted"></i>
-                        <div><a href="https://wa.me/5543996341638" target="_blank">+55 (43) 99634-1638</a></div>
-                    </div>
-                    <div class="col-lg-4 text-center mb-5 mb-lg-0">
-                        <!-- Instagram Icon -->
-                        <i class="bi-instagram fs-2 mb-3 text-muted"></i>
-                        <div><a href="https://www.instagram.com/estuartsilvestre24" target="_blank">@estuartsilvestre24</a></div>
-                    </div>
-                    <div class="col-lg-4 text-center mb-5 mb-lg-0">
-                        <!-- Gmail Icon -->
-                        <i class="bi-envelope fs-2 mb-3 text-muted"></i>
-                        <div><a href="mailto:estuartmathues11@gmail.com">estuartmathues11@gmail.com</a></div>
-                    </div>
-                </div>
-                
-            </div>
-        </section>
-        
-        <!-- Footer-->
-        <footer class="bg-light py-5">
-            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - SilvestreCode</div></div>
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">SilvestreCode</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="#">SilvestreCode</a>
+      </div>
+    </div>
 
-            <div class="container px-4 px-lg-5 pt-2"><div class="small text-center text-muted">Distributed By <a href="#">SilvestreCode</a>
-            </div></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-        <script src="{% static 'path/to/lightbox.js' %}"></script>
-        <style>
-            .portfolio-box-inner {
-                position: relative;
-                display: inline-block;
-            }
-        
-            .portfolio-box-inner img {
-                width: 100%;
-                height: 250px; /* Define a altura fixa */
-                object-fit: cover; /* Faz com que a imagem cubra a área do contêiner */
-                object-position: center; /* Centraliza a imagem */
-            }
-        
-            .portfolio-box-caption {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: rgba(0, 0, 0, 0.5);
-                color: #fff;
-                padding: 15px;
-                text-align: center;
-            }
-        
-            .portfolio-btn {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 10;
-                padding: 10px 20px;
-                background-color: #5F9F9F; /* Cor do botão atualizada */
-                color: #fff;
-                text-align: center;
-                text-decoration: none;
-                border-radius: 5px;
-            }
-        
-            .portfolio-btn:hover {
-                background-color: #4a7d7d; /* Cor de hover mais escura para contraste */
-            }
-        </style>
-    </body>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <style>
+    /* Estilos para o formulário */
+    #contact-form {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    /* Estilos para os campos de entrada */
+    #contact-form input, #contact-form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+  
+    /* Estilo para as labels */
+    #contact-form label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+  
+    /* Estilos para o botão de envio */
+    #contact-form button[type="submit"] {
+      background-color: #d9534f; /* Cor vermelha suave */
+      color: white;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  
+    #contact-form button[type="submit"]:hover {
+      background-color: #c9302c; /* Cor vermelha mais escura ao passar o mouse */
+    }
+  
+    /* Mensagens de erro e sucesso */
+    .error-message {
+      color: red;
+      font-size: 14px;
+    }
+  
+    .sent-message {
+      color: green;
+      font-size: 14px;
+    }
+  
+    .loading {
+      color: #777;
+      font-size: 14px;
+    }
+  
+    /* Layout responsivo */
+    @media (max-width: 768px) {
+      #contact-form .col-md-6 {
+        width: 100%;
+        padding: 0;
+      }
+    }
+  </style>
+
+  
+
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
 </html>
