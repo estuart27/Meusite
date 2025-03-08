@@ -64,24 +64,24 @@ ASGI_APPLICATION = 'meuprojeto.asgi.application'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',  # Nome do banco de dados
-        'USER': 'postgres.tpcdjmjvhqlypcxnlhrk',  # Usuário do banco de dados
-        'PASSWORD': 'estuart123040506',  # Insira a senha do banco que você configurou no Supabase
-        'HOST': 'aws-0-sa-east-1.pooler.supabase.com',  # Host do banco de dados
-        'PORT': '6543',  # Porta
-    }
-}
-
-# DATABASES configuration for local SQLite database
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',  # O arquivo de banco de dados será armazenado aqui
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',  # Nome do banco de dados
+#         'USER': 'postgres.tpcdjmjvhqlypcxnlhrk',  # Usuário do banco de dados
+#         'PASSWORD': 'estuart123040506',  # Insira a senha do banco que você configurou no Supabase
+#         'HOST': 'aws-0-sa-east-1.pooler.supabase.com',  # Host do banco de dados
+#         'PORT': '6543',  # Porta
 #     }
 # }
+
+# DATABASES configuration for local SQLite database
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # O arquivo de banco de dados será armazenado aqui
+    }
+}
 
 
 
