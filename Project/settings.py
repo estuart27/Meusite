@@ -84,7 +84,7 @@ DATABASES = {
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',  # O arquivo de banco de dados será armazenado aqui
 #     }
-# }
+# 
 
 
 
