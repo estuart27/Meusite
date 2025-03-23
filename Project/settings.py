@@ -1,4 +1,5 @@
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -65,24 +66,25 @@ ASGI_APPLICATION = 'meuprojeto.asgi.application'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',  # Nome do banco de dados
-#         'USER': 'postgres.tpcdjmjvhqlypcxnlhrk',  # Usuário do banco de dados
-#         'PASSWORD': 'estuart123040506',  # Insira a senha do banco que você configurou no Supabase
-#         'HOST': 'aws-0-sa-east-1.pooler.supabase.com',  # Host do banco de dados
-#         'PORT': '6543',  # Porta
-#     }
-# }
-
-# DATABASES configuration for local SQLite database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',  # O arquivo de banco de dados será armazenado aqui
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DATABASE_NAME'),
+        'USER': config('DATABASE_USER'),
+        'PASSWORD': config('DATABASE_PASSWORD'),
+        'HOST': config('DATABASE_HOST'),
+        'PORT': config('DATABASE_PORT'),
     }
 }
+
+
+# # DATABASES configuration for local SQLite database
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',  # O arquivo de banco de dados será armazenado aqui
+#     }
+# }
 
 
 
@@ -115,30 +117,36 @@ USE_I18N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
 
-# Adicionando a configuração para os arquivos estáticos
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # Aponta para a pasta static na raiz do projeto
-]
+STATIC_ROOT = '/var/www/Onepage-avaliacao/static'
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = '/var/www/Onepage-avaliacao/media'
+
+
+
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),  # Adicione aqui o diretório que contém seus arquivos estáticos
+# ]
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Para coletar arquivos estáticos
+
+
+# STATIC_URL = '/static/'
+
+# # Adicionando a configuração para os arquivos estáticos
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static',  # Aponta para a pasta static na raiz do projeto
+# ]
 
 # STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+# MEDIA_URL = '/media/'  # URL base para servir arquivos de mídia
+# MEDIA_ROOT = BASE_DIR / 'media'  # Diretório onde os arquivos de mídia serão salvos
 
-
-# Configurações de arquivos de mídia
-MEDIA_URL = '/media/'  # URL base para servir arquivos de mídia
-MEDIA_ROOT = BASE_DIR / 'media'  # Diretório onde os arquivos de mídia serão salvos
-
-# Configuração opcional para produção
-# STATIC_ROOT = BASE_DIR / 'staticfiles'  # Onde os arquivos estáticos serão coletados para servir em produção
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
