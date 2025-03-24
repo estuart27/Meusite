@@ -118,11 +118,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/var/www/Onepage-avaliacao/static'
+STATIC_ROOT = '/var/www/silvestrecode/Meusite/static'
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = '/var/www/Onepage-avaliacao/media'
+MEDIA_ROOT = '/var/www/silvestrecode/Meusite/media'
 
 
 
