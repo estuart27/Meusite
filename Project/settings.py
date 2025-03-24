@@ -12,9 +12,10 @@ SECRET_KEY = '2m&e=73x6p_a@3rz8$&ohdp8*ox+d#9ek1^$a*5ddf@ee6e-k%'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = False
-# ALLOWED_HOSTS = ['www.silvestrecode.shop', 'silvestrecode.shop', ]
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.silvestrecode.shop', 'silvestrecode.shop', ]
+
+# ALLOWED_HOSTS = ['*']
 
 # Application definition
 
