@@ -12,7 +12,7 @@ def responder_com_pdf(mensagem: str) -> str:
     """
     # caminho_pdf = 'dados.pdf'
 
-    caminho_pdf = '/root/silvestrecode/Meusite/dados.pdf'    
+    caminho_pdf = '/var/www/silvestrecode/Meusite/dados.pdf' 
 
     # Configuração da chave da API
     api_key = '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'
