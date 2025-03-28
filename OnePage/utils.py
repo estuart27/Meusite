@@ -2,6 +2,7 @@ import os
 from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_groq import ChatGroq
 from langchain.prompts import ChatPromptTemplate
+from decouple import config
 
 def responder_com_pdf(mensagem: str) -> str:
     """
@@ -10,12 +11,11 @@ def responder_com_pdf(mensagem: str) -> str:
     :param mensagem: Mensagem do usuário para consulta.
     :return: Resposta gerada pelo modelo.
     """
-    # caminho_pdf = 'dados.pdf'
-
-    caminho_pdf = '/var/www/silvestrecode/Meusite/dados.pdf' 
+    # caminho_pdf = '/var/www/silvestrecode/Meusite/dados.pdf' 
+    caminho_pdf = 'dados.pdf' 
 
     # Configuração da chave da API
-    api_key = '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'
+    api_key = config('CHAVE_API')
     os.environ['GROQ_API_KEY'] = api_key
     
     # Inicializa o chat com o modelo especificado

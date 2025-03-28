@@ -1,11 +1,9 @@
 from pathlib import Path
 from decouple import config
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '2m&e=73x6p_a@3rz8$&ohdp8*ox+d#9ek1^$a*5ddf@ee6e-k%'
@@ -13,11 +11,11 @@ SECRET_KEY = '2m&e=73x6p_a@3rz8$&ohdp8*ox+d#9ek1^$a*5ddf@ee6e-k%'
 
 DEBUG = False
 
+# DEBUG = True
+
 ALLOWED_HOSTS = ['www.silvestrecode.shop', 'silvestrecode.shop', ]
 
 # ALLOWED_HOSTS = ['*']
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -79,16 +77,13 @@ DATABASES = {
 }
 
 
-# # DATABASES configuration for local SQLite database
+# DATABASES configuration for local SQLite database
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',  # O arquivo de banco de dados será armazenado aqui
 #     }
-# 
-
-# Password validation
-# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
+#  }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -124,7 +119,6 @@ STATIC_ROOT = '/var/www/silvestrecode/Meusite/static'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = '/var/www/silvestrecode/Meusite/media'
-
 
 
 # STATICFILES_DIRS = [

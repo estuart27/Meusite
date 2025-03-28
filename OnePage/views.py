@@ -1,11 +1,15 @@
-from django.shortcuts import render
 from django.shortcuts import render, redirect
-from .forms import ContactRequestForm
 from django.contrib import messages
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from .utils import responder_com_pdf
+from .forms import ContactRequestForm
 from .models import PortfolioItem  # Importando o modelo de itens do portfólio
-# from .utils import analizar_partida  # Certifique-se de que a função resposta_bot está no arquivo correto;
+import logging
+import json
 
 
+logger = logging.getLogger(__name__)
 
 def index(request):
     if request.method == 'POST':
@@ -18,7 +22,6 @@ def index(request):
     else:
         form = ContactRequestForm()
 
-    # Busca os itens do portfólio para passar ao template
     portfolio_items = PortfolioItem.objects.all()
 
     return render(request, 'OnePage/index.html', {
@@ -27,13 +30,10 @@ def index(request):
     })
 
 
-
 def portfolio(request):
     portfolio_items = PortfolioItem.objects.all()
     # Filtrar apenas os itens de portfólio que são vídeos ou têm has_video=True
     video_items = PortfolioItem.objects.filter(has_video=True) | PortfolioItem.objects.filter(category='video')
-
-    # feedback = analizar_partida() #IA em desenvolvimento
     
     context = {
         'video_items': video_items,
@@ -46,15 +46,6 @@ def sobrenois(request):
     portfolio_items = PortfolioItem.objects.all()  # Obtém todos os itens do portfólio
     return render(request, 'OnePage/portfolio-details.html', {'portfolio_items': portfolio_items})
 
-
-
-import logging
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-import json
-from .utils import responder_com_pdf
-
-logger = logging.getLogger(__name__)
 
 @csrf_exempt
 def chat_api(request):
@@ -82,8 +73,3 @@ def chat_api(request):
     logger.warning("Método não permitido")
     return JsonResponse({"error": "Método não permitido"}, status=405)
 
-
-
-# def portfolio_details(request):
-#     portfolio_items = PortfolioItem.objects.all()  # Pega todos os itens do portfólio
-#     return render(request, 'portfolio_details.html', {'portfolio_items': portfolio_items})

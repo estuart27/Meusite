@@ -639,3 +639,708 @@
       padding: 0;
     }
   }
+
+
+  /* ____________________________ */
+
+
+  #chat-widget {
+    position: fixed;
+    z-index: 9999;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Modo compacto (padrão) */
+  .compact-mode {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  /* Botão flutuante discreto */
+  .chat-button {
+    background: var(--accent-color);
+    /* Usando a cor de destaque */
+    color: var(--contrast-color);
+    /* Usando a cor de contraste */
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .chat-button:hover {
+    transform: scale(1.05);
+  }
+
+  .chat-button i {
+    font-size: 20px;
+  }
+
+  .notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #f03e3e;
+    color: var(--contrast-color);
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Painel lateral do chat */
+  .chat-panel {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    /* Inicialmente fora da tela */
+    width: 420px;
+    height: 100%;
+    background-color: var(--surface-color);
+    /* Usando a cor da superfície */
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+    visibility: hidden;
+    /* Inicialmente escondido */
+  }
+
+  .chat-panel.active {
+    right: 0;
+    visibility: visible;
+  }
+
+  /* Cabeçalho do chat */
+  .chat-header {
+    background: var(--accent-color);
+    /* Usando a cor de destaque */
+    color: var(--contrast-color);
+    /* Usando a cor de contraste */
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .chat-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background-color: var(--surface-color);
+    /* Usando a cor da superfície */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .chat-avatar img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+  }
+
+  .chat-title {
+    flex: 1;
+  }
+
+  .chat-title h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--heading-color);
+    /* Usando a cor do cabeçalho */
+  }
+
+  .status {
+    font-size: 11px;
+    color: #a5ffbe;
+    display: flex;
+    align-items: center;
+  }
+
+  .status:before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #a5ffbe;
+    border-radius: 50%;
+    margin-right: 4px;
+  }
+
+  .chat-actions button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: var(--contrast-color);
+    /* Usando a cor de contraste */
+    font-size: 14px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+  }
+
+  .chat-actions button:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  /* Corpo do chat */
+  .chat-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: calc(100% - 56px);
+  }
+
+  .chat-messages {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    background-color: #f9fafc;
+    /* Pode ser ajustado se necessário */
+  }
+
+  .message-received,
+  .message-sent {
+    margin-bottom: 12px;
+    max-width: 85%;
+    position: relative;
+  }
+
+  .message-received {
+    background-color: #f1f1f1;
+    padding: 10px 12px;
+    border-radius: 14px 14px 14px 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  .message-received p {
+    margin: 0;
+    color: var(--default-color);
+    /* Usando a cor padrão */
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .message-sent {
+    background: var(--accent-color);
+    /* Usando a cor de destaque */
+    color: var(--contrast-color);
+    /* Usando a cor de contraste */
+    padding: 10px 12px;
+    border-radius: 14px 14px 4px 14px;
+    margin-left: auto;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .message-sent p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .message-time {
+    font-size: 9px;
+    color: #888;
+    display: block;
+    margin-top: 4px;
+  }
+
+  .message-sent .message-time {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: right;
+  }
+
+  /* Seção de opções */
+  .chat-options {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px;
+    background-color: #f9fafc;
+    /* Pode ser ajustado se necessário */
+    border-top: 1px solid #f0f0f0;
+    gap: 6px;
+  }
+
+  .option-button {
+    background: var(--surface-color);
+    /* Usando a cor da superfície */
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 6px 12px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--accent-color);
+    /* Usando a cor de destaque */
+    font-weight: 500;
+    transition: all 0.2s;
+    flex: 1 0 auto;
+    max-width: calc(50% - 6px);
+  }
+
+  .option-button:hover {
+    background: #f7f5ff;
+    border-color: var(--accent-color);
+    /* Usando a cor de destaque */
+  }
+
+  /* Área de input */
+  .chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: var(--surface-color);
+    /* Usando a cor da superfície */
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .chat-input input {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 8px 14px;
+    outline: none;
+    font-size: 13px;
+    transition: all 0.2s;
+  }
+
+  #scroll-top {
+    display: none !important;
+  }
+
+  .chat-input input:focus {
+    border-color: var(--accent-color);
+    /* Usando a cor de destaque */
+    box-shadow: 0 0 0 2px rgba(228, 60, 92, 0.1);
+    /* Ajuste a cor se necessário */
+  }
+
+  .chat-input button {
+    background: var(--accent-color);
+    /* Usando a cor de destaque */
+    color: var(--contrast-color);
+    /* Usando a cor de contraste */
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-left: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+  }
+
+  .chat-input button:hover {
+    background: #5B18E6;
+    /* Pode ser ajustado se necessário */
+  }
+
+  .chat-input button i {
+    font-size: 14px;
+  }
+
+  /* Responsividade para dispositivos móveis */
+  @media (max-width: 767px) {
+    .chat-panel {
+      width: 280px;
+      /* Um pouco mais estreito em celulares */
+    }
+
+    .chat-panel.active {
+      height: 100%;
+      top: 0;
+    }
+
+    /* Ajuste no estilo das opções para caber melhor */
+    .option-button {
+      padding: 6px 10px;
+      font-size: 11px;
+    }
+  }
+
+  /* Scrollbar customizada */
+  .chat-messages::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .chat-messages::-webkit-scrollbar-track {
+    background: #f9fafc;
+    /* Pode ser ajustado se necessário */
+  }
+
+  .chat-messages::-webkit-scrollbar-thumb {
+    background: #cfd8dc;
+    border-radius: 10px;
+  }
+
+  /* ____________________ */
+
+
+  #chat-widget {
+    position: fixed;
+    z-index: 9999;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Modo compacto (padrão) */
+  .compact-mode {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  /* Botão flutuante discreto */
+  .chat-button {
+    background: var(--accent-color);
+    /* Usando a cor de destaque */
+    color: var(--contrast-color);
+    /* Usando a cor de contraste */
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .chat-button:hover {
+    transform: scale(1.05);
+  }
+
+  .chat-button i {
+    font-size: 20px;
+  }
+
+  .notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #f03e3e;
+    color: var(--contrast-color);
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Painel lateral do chat */
+  .chat-panel {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    /* Inicialmente fora da tela */
+    width: 420px;
+    height: 100%;
+    background-color: var(--surface-color);
+    /* Usando a cor da superfície */
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+    visibility: hidden;
+    /* Inicialmente escondido */
+  }
+
+  .chat-panel.active {
+    right: 0;
+    visibility: visible;
+  }
+
+  /* Cabeçalho do chat */
+  .chat-header {
+    background: var(--accent-color);
+    /* Usando a cor de destaque */
+    color: var(--contrast-color);
+    /* Usando a cor de contraste */
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .chat-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background-color: var(--surface-color);
+    /* Usando a cor da superfície */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .chat-avatar img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+  }
+
+  .chat-title {
+    flex: 1;
+  }
+
+  .chat-title h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--heading-color);
+    /* Usando a cor do cabeçalho */
+  }
+
+  .status {
+    font-size: 11px;
+    color: #a5ffbe;
+    display: flex;
+    align-items: center;
+  }
+
+  .status:before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #a5ffbe;
+    border-radius: 50%;
+    margin-right: 4px;
+  }
+
+  .chat-actions button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: var(--contrast-color);
+    /* Usando a cor de contraste */
+    font-size: 14px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+  }
+
+  .chat-actions button:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  /* Corpo do chat */
+  .chat-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: calc(100% - 56px);
+  }
+
+  .chat-messages {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    background-color: #f9fafc;
+    /* Pode ser ajustado se necessário */
+  }
+
+  .message-received,
+  .message-sent {
+    margin-bottom: 12px;
+    max-width: 85%;
+    position: relative;
+  }
+
+  .message-received {
+    background-color: #f1f1f1;
+    padding: 10px 12px;
+    border-radius: 14px 14px 14px 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  .message-received p {
+    margin: 0;
+    color: var(--default-color);
+    /* Usando a cor padrão */
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .message-sent {
+    background: var(--accent-color);
+    /* Usando a cor de destaque */
+    color: var(--contrast-color);
+    /* Usando a cor de contraste */
+    padding: 10px 12px;
+    border-radius: 14px 14px 4px 14px;
+    margin-left: auto;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .message-sent p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .message-time {
+    font-size: 9px;
+    color: #888;
+    display: block;
+    margin-top: 4px;
+  }
+
+  .message-sent .message-time {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: right;
+  }
+
+  /* Seção de opções */
+  .chat-options {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px;
+    background-color: #f9fafc;
+    /* Pode ser ajustado se necessário */
+    border-top: 1px solid #f0f0f0;
+    gap: 6px;
+  }
+
+  .option-button {
+    background: var(--surface-color);
+    /* Usando a cor da superfície */
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 6px 12px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--accent-color);
+    /* Usando a cor de destaque */
+    font-weight: 500;
+    transition: all 0.2s;
+    flex: 1 0 auto;
+    max-width: calc(50% - 6px);
+  }
+
+  .option-button:hover {
+    background: #f7f5ff;
+    border-color: var(--accent-color);
+    /* Usando a cor de destaque */
+  }
+
+  /* Área de input */
+  .chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: var(--surface-color);
+    /* Usando a cor da superfície */
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .chat-input input {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 8px 14px;
+    outline: none;
+    font-size: 13px;
+    transition: all 0.2s;
+  }
+
+  #scroll-top {
+    display: none !important;
+  }
+
+  .chat-input input:focus {
+    border-color: var(--accent-color);
+    /* Usando a cor de destaque */
+    box-shadow: 0 0 0 2px rgba(228, 60, 92, 0.1);
+    /* Ajuste a cor se necessário */
+  }
+
+  .chat-input button {
+    background: var(--accent-color);
+    /* Usando a cor de destaque */
+    color: var(--contrast-color);
+    /* Usando a cor de contraste */
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-left: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+  }
+
+  .chat-input button:hover {
+    background: #5B18E6;
+    /* Pode ser ajustado se necessário */
+  }
+
+  .chat-input button i {
+    font-size: 14px;
+  }
+
+  /* Responsividade para dispositivos móveis */
+  @media (max-width: 767px) {
+    .chat-panel {
+      width: 280px;
+      /* Um pouco mais estreito em celulares */
+    }
+
+    .chat-panel.active {
+      height: 100%;
+      top: 0;
+    }
+
+    /* Ajuste no estilo das opções para caber melhor */
+    .option-button {
+      padding: 6px 10px;
+      font-size: 11px;
+    }
+  }
+
+  /* Scrollbar customizada */
+  .chat-messages::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .chat-messages::-webkit-scrollbar-track {
+    background: #f9fafc;
+    /* Pode ser ajustado se necessário */
+  }
+
+  .chat-messages::-webkit-scrollbar-thumb {
+    background: #cfd8dc;
+    border-radius: 10px;
+  }
