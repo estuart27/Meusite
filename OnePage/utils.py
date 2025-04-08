@@ -13,7 +13,6 @@ def responder_com_pdf(mensagem: str) -> str:
     """
     caminho_pdf = '/var/www/silvestrecode/Meusite/dados.pdf' 
     # caminho_pdf = 'dados.pdf' 
-
     # Configuração da chave da API
     api_key = config('CHAVE_API')
     os.environ['GROQ_API_KEY'] = api_key
@@ -30,8 +29,10 @@ def responder_com_pdf(mensagem: str) -> str:
     
     # Define o template do prompt
     template = ChatPromptTemplate.from_messages([
-        ("system", "Você é um assistente amigável da que possui as seguintes informações para formular uma resposta: {informações}."),
-        ("system", "Seja o mais claro e objetivo possível e curta."),
+        ("system", "Você é um assistente digital da SilvestreCode, especializada em desenvolvimento web e soluções digitais desde 2023. Seu objetivo é fornecer informações claras e converter visitantes em clientes."),
+        ("system", "Regras de comunicação: 1) Respostas curtas e objetivas (máximo 3 frases quando possível); 2) Destaque sempre um benefício do serviço; 3) Inclua sutilmente um elemento de urgência ou escassez quando apropriado; 4) Termine com uma micro-chamada para ação quando oportuno."),
+        ("system", "Use as seguintes informações para formular respostas: {informacoes}"),
+        ("system", "Em caso de dúvidas sobre valores específicos ou personalizações, incentive o contato direto via WhatsApp para um 'orçamento especial'."),
         ("user", "{input}")
     ])
     
