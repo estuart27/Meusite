@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .utils import responder_com_pdf
 from .forms import ContactRequestForm
-from .models import PortfolioItem  # Importando o modelo de itens do portfólio
+from .models import PortfolioItem,Media
 import logging
 import json
 
@@ -73,3 +73,7 @@ def chat_api(request):
     logger.warning("Método não permitido")
     return JsonResponse({"error": "Método não permitido"}, status=405)
 
+
+def consultorias(request):
+    media_items = Media.objects.all()  # Obtém todos os itens do portfólio
+    return render(request, 'OnePage/consultorias.html', {'media_items': media_items})

@@ -44,10 +44,8 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="{% url 'index' %}"  class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Silvestre.Code</h1>
+      <a href="{% url 'index' %}">
+        <img src="{% static 'assets/img/logoo.png' %}" alt="Silvestre.Code Logo" class="logo-img" style="height: 80px; width: auto;">
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -87,8 +85,8 @@
     <!-- Page Title -->
     <div class="page-title dark-background" style="background-image: url(assets/img/page-title-bg.webp);">
       <div class="container position-relative">
-        <h1>Sobre nós</h1>
-        <p>Somos uma equipe apaixonada por tecnologia, especializada em desenvolver sites, blogs e chatbots. Nosso objetivo é transformar suas ideias em soluções digitais impactantes, sempre com foco nas suas necessidades. Vamos juntos levar seu projeto ao próximo nível</p>
+        <h1>Nossa História</h1>
+        <p>Da paixão por códigos à excelência em gestão empresarial, conheça a trajetória da SilvestreCode e como nosso compromisso com inovação e resultados tem revolucionado negócios desde 2023.</p>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="{% url 'index' %}">Home</a></li>
@@ -97,12 +95,11 @@
         </nav>
       </div>
     </div><!-- End Page Title -->
-
     <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">
 
       <div class="container" data-aos="fade-up">
-    
+
         <div class="portfolio-details-slider swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
@@ -134,101 +131,476 @@
           <div class="swiper-button-next"></div>
           <div class="swiper-pagination"></div>
         </div>
-    
-  
+
         <div class="row justify-content-between gy-4 mt-4">
 
           <div class="col-lg-8" data-aos="fade-up">
             <div class="portfolio-description">
-              <h2>Somos SilvestreCode</h2>
+              <h2>A Jornada da SilvestreCode</h2>
+              
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-badge">2023</div>
+                  <div class="timeline-content">
+                    <h4>O Nascimento de uma Visão</h4>
+                  </div>
+                </div>
+              </div>
+              
               <p>
-                Desde 2023, atuamos na área de desenvolvimento web, oferecendo soluções personalizadas para empresas e indivíduos que desejam ampliar sua presença digital. Nossa especialidade é criar sites modernos e funcionais, como e-commerces, blogs, páginas OnePage, e outros tipos de plataformas que atendam exatamente às necessidades dos nossos clientes.
-
-                Na SilvestreCode, acreditamos que um site bem desenvolvido é uma poderosa ferramenta para impulsionar negócios. Combinamos design atraente, funcionalidade intuitiva e otimização para motores de busca (SEO), garantindo que seu site não apenas tenha uma aparência incrível, mas também seja encontrado e fácil de usar.              </p>
-              <p>
-                Por que escolher a SilvestreCode? Nós não apenas desenvolvemos sites, mas também nos comprometemos com o sucesso dos nossos clientes. Desde o primeiro contato até o lançamento do site e além, trabalhamos lado a lado para garantir que cada projeto seja um reflexo fiel da marca e dos objetivos de negócio do cliente.
+                Em 2023, enquanto muitos ainda se recuperavam dos impactos globais recentes, nasceu a SilvestreCode com uma missão clara: transformar desafios em oportunidades através da tecnologia. Não começamos como uma grande corporação, mas como um pequeno time movido por uma paixão imensa por inovação e soluções digitais que realmente fizessem diferença no dia a dia das empresas.
               </p>
+              
               <p>
-                Seja para dar os primeiros passos na internet ou para renovar sua presença digital, estamos prontos para ajudar sua marca a alcançar novos patamares.
+                Nossa história começou de forma simples, mas significativa. Nossos primeiros passos na tecnologia surgiram dentro da empresa onde trabalhávamos, onde enfrentávamos diariamente tarefas repetitivas e processos manuais que consumiam tempo precioso. Foi nesse cenário que surgiu a ideia de automatizar esses processos – uma decisão que não apenas otimizou nosso trabalho, mas revelou um universo de oportunidades dentro da operação. 
+              </p>
+              
+              <p>
+                Essa experiência despertou em nós uma verdadeira paixão pela tecnologia. Mergulhamos de cabeça nesse novo mundo, estudando linguagens de programação, inteligência artificial, desenvolvimento web e outras áreas relacionadas. A cada nova automação implementada, os resultados se tornavam mais evidentes: economia significativa de tempo, maior assertividade nas análises e melhorias operacionais que transformavam o ambiente de trabalho.
               </p>
 
-              <div class="testimonial-item">
+
+              <div class="milestone-box">
+                <h3>Nossos Primeiros Desafios</h3>
                 <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Se o seu negócio não está na internet, o seu negócio vai estar fora do mercado.
-                  </span>
-                  <i class="bi bi-quote quote-icon-right"></i>
+                  O verdadeiro ponto de virada veio quando fomos desafiados a desenvolver um sistema de análise de dados para um hub logístico de uma operadora do iFood. O problema era complexo: coletar, processar e analisar grandes volumes de dados operacionais para identificar gargalos e oportunidades de melhoria no processo de delivery.
                 </p>
-                <div>
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>Marco Lopes</h3>
-                  <h4> Empreendedor</h4>
+                <p>
+                  O que começou como um projeto técnico rapidamente se transformou em muito mais. Mergulhamos de cabeça na operação, desenvolvendo ferramentas de raspagem de dados que extraíam informações valiosas de múltiplas fontes. Criamos painéis analíticos que traduziam esses dados em insights acionáveis, permitindo tomadas de decisão baseadas em evidências concretas. Esta solução completa resultou em:
+                </p>
+                <ul class="achievement-list">
+                  <li>Redução de 27% no tempo médio de entrega</li>
+                  <li>Aumento de 70% na capacidade de analise precisa dos dados do pedidos</li>
+                  <li>Economia de tempo para outras atividades </li>
+                </ul>
+                <p>
+                  Foi neste momento que percebemos: nossa verdadeira força não estava apenas nos códigos, mas na capacidade de entender profundamente os problemas de negócio, extrair dados relevantes e criar soluções analíticas que gerassem impacto mensurável nas operações.
+                </p>
+              </div>
+
+              <h3>Expandindo Horizontes</h3>
+
+              <p>
+                O sucesso deste primeiro grande projeto abriu portas. Com o tempo, não nos limitamos apenas à tecnologia – expandimos nossos conhecimentos para áreas de gestão essenciais. Mergulhamos na gestão logística, gestão de pessoas, análise de dados e outras áreas estratégicas que complementavam nossas habilidades técnicas.
+              </p>
+              
+              <p>
+                Logo estávamos desenvolvendo sistemas avançados de avaliação de desempenho para colaboradores de pequenas e médias empresas. Um desses sistemas, implementado em uma rede local de varejo com 75 funcionários, utilizava inteligência artificial para fornecer feedback detalhado sobre o desempenho dos colaboradores. O resultado foi uma visão tão clara das competências e necessidades de desenvolvimento da equipe que a empresa registrou um aumento de 23% na produtividade nos meses seguintes à implementação.
+              </p>
+
+
+              <div class="image-highlight">
+                <img src="/api/placeholder/600/400" alt="Equipe trabalhando" class="img-fluid rounded shadow">
+                <p class="caption">Nossa equipe trabalhando no desenvolvimento de soluções integradas</p>
+              </div>
+
+              <h3>A Jornada para a Gestão</h3>
+
+              <p>
+                Conforme os projetos cresciam em complexidade, uma revelação importante surgiu: a tecnologia sem uma gestão eficiente tinha impacto limitado. Foi assim que, quase naturalmente, começamos a nos aprofundar no universo da gestão empresarial.
+              </p>
+              
+              <p>
+                Durante dois anos intensos, tivemos a oportunidade de liderar uma equipe multidisciplinar em um dos nossos clientes, implementando não apenas soluções tecnológicas, mas também metodologias ágeis, indicadores de performance (KPIs) relevantes e processos de melhoria contínua.
+              </p>
+              
+              <p>
+                Esta experiência transformou completamente nossa visão de negócio. Compreendemos que a verdadeira inovação não está apenas na tecnologia em si, mas em como ela se integra à realidade operacional das empresas. Deixamos de ser apenas "a empresa de tecnologia" para nos tornarmos parceiros estratégicos que entendem tanto de linhas de código quanto de linhas de produção, tanto de algoritmos quanto de gestão de pessoas.
+              </p>
+
+              <div class="milestone-box blue">
+                <h3>Nossa Metodologia Única</h3>
+                <p>
+                  Desta jornada nasceu o que hoje chamamos de "Metodologia Silvestre" - nossa abordagem proprietária que combina:
+                </p>
+                <ul class="method-list">
+                  <li><strong>Diagnóstico Tecnológico e Operacional:</strong> Compreendendo profundamente os processos antes de propor soluções</li>
+                  <li><strong>Desenvolvimento Ágil com Feedback Constante:</strong> Garantindo que a solução evolua alinhada às necessidades reais</li>
+                  <li><strong>Implementação Assistida:</strong> Com treinamento da equipe e acompanhamento próximo</li>
+                  <li><strong>Evolução Contínua:</strong> Monitoramento de resultados e ajustes estratégicos</li>
+                </ul>
+                <p>
+                  Esta metodologia nos permitiu entregar resultados consistentes e duradouros, independentemente do tamanho do cliente ou da complexidade do desafio.
+                </p>
+              </div>
+
+
+
+              <h3>SilvestreCode Hoje</h3>
+
+              <p>
+                Foi dessa trajetória que nasceu a SilvestreCode – uma empresa que entende que a tecnologia já é uma realidade dos nossos dias, mas que muitas organizações ainda lutam para integrá-la de forma eficiente em suas operações. Nossa missão vai além de desenvolver software; trabalhamos para que a praticidade e os benefícios que a tecnologia oferece sejam acessíveis e tragam resultados concretos para nossos clientes.
+              </p>
+              
+              <p>
+                Atualmente, a SilvestreCode não é apenas uma equipe de desenvolvimento. Somos arquitetos de transformação digital que combinam conhecimento técnico profundo com visão estratégica de negócios. Nossa equipe cresce constantemente em capacidade técnica e experiência gerencial, sempre com o compromisso de entregar soluções que não apenas funcionem bem, mas que realmente transformem resultados.
+              </p>
+              
+              <p>
+                De pequenos projetos locais a soluções complexas de automação, nossa evolução reflete nossa filosofia: a verdadeira inovação acontece quando a tecnologia é aplicada com propósito claro e alinhada a uma gestão eficiente.
+              </p>
+              
+              <p>
+                Continuamos a cultivar relações próximas com nossos clientes, muitos dos quais estão conosco desde o início da jornada, crescendo juntos e enfrentando novos desafios a cada dia.
+              </p>
+
+              <div class="values-section">
+                <h3>Nossos Valores Fundamentais</h3>
+                <div class="row values-row">
+                  <div class="col-md-4">
+                    <div class="value-card">
+                      <i class="bi bi-lightbulb"></i>
+                      <h4>Inovação com Propósito</h4>
+                      <p>Tecnologia a serviço de resultados concretos, não apenas por inovar</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="value-card">
+                      <i class="bi bi-people"></i>
+                      <h4>Parceria Genuína</h4>
+                      <p>Compromisso de longo prazo com o sucesso dos nossos clientes</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="value-card">
+                      <i class="bi bi-graph-up"></i>
+                      <h4>Excelência Mensurável</h4>
+                      <p>Foco em resultados tangíveis e quantificáveis</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
+              <h3>O Futuro</h3>
+
+              <p>
+                Olhando para o futuro, estamos entusiasmados com as novas fronteiras que se abrem. A inteligência artificial, análise avançada de dados e automação inteligente estão no centro da nossa estratégia de desenvolvimento, sempre com o foco em criar soluções que não apenas acompanhem as tendências, mas que realmente façam diferença nos resultados dos nossos clientes.
+              </p>
               
-              <h3>Desenvolvimento de Sites</h3>
-
               <p>
-                Um site atualizado é fundamental para o sucesso do seu negócio. Ele garante visibilidade e acesso 24/7 aos clientes, fortalecendo a credibilidade e a confiança na sua marca. Além de ajudar a acompanhar a concorrência, um site bem mantido melhora a experiência do usuário, aumentando as chances de conversão e facilitando suas estratégias de marketing digital. Em resumo, investir em um site é investir no crescimento e no futuro do seu negócio."              
+                Nossa jornada está apenas começando, e continuamos com a mesma paixão e compromisso que nos impulsionou desde o primeiro dia: transformar desafios em oportunidades através da tecnologia aplicada com propósito e integrada a uma gestão eficiente.
               </p>
-
-                            
-              <h3>Blog</h3>
-
-              <p>
-                Ter um blog é essencial para atrair visitantes, engajar seu público e posicionar sua marca como uma autoridade no mercado. Nós oferecemos um serviço completo de criação de blogs, com design personalizado e otimização para SEO, ajudando você a gerar mais tráfego, melhorar seu posicionamento e converter leitores em clientes.
-              </p>
-
-                            
-              <h3>OnePage</h3>
-
-              <p>
-                Um site OnePage é ideal para quem deseja uma presença online direta e impactante. Ele facilita a navegação, melhora a experiência do usuário e oferece um design visual atraente, tudo em uma única página otimizada para dispositivos móveis. Contrate nossos serviços para criar uma OnePage moderna e funcional, que destaque sua marca e atenda às necessidades do seu negócio com eficiência.
               
-              </p>
-
-              <h3>Automatize </h3>
-
-              <p>
-                Automatizar seu negócio é essencial para ganhar eficiência, reduzir erros e melhorar a experiência do cliente. A automação libera sua equipe para focar em tarefas estratégicas e permite escalar processos conforme o crescimento da demanda. Contrate nossos serviços para implementar automações que economizam tempo e recursos, fortalecendo a produtividade e o relacionamento com seus clientes.           
-              </p>
-
-              <h3>E-commerces</h3>
-
-              <p>
-                Maximize suas vendas e simplifique a gestão com uma loja virtual projetada para crescer junto com seu negócio. Nossas soluções de e-commerce integram pagamentos, oferecem gestão fácil de inventário e um design intuitivo para uma experiência de compra envolvente. Vamos ajudar sua empresa a atingir novos clientes e aumentar sua receita com uma plataforma eficiente e personalizada.              
-              </p>
-
-              <h4></h4>
-
-              <p>
-                Em um mercado competitivo, ter um site eficiente e visualmente atraente é essencial para conquistar e manter clientes. Seja para um blog que engaje e aumente sua autoridade, um site One-Page de impacto, automações que economizam tempo, ou uma plataforma de e-commerce que facilite cada etapa da compra, estamos prontos para transformar sua presença online. Ao contratar nossos serviços, você terá à disposição uma equipe focada em criar soluções sob medida para suas necessidades e objetivos. Não perca a chance de elevar seu negócio ao próximo nível—conte conosco para fazer isso acontecer!              
-              </p>
+              <div class="cta-section">
+                <h3>Vamos Construir o Futuro Juntos!</h3>
+                <p>Seja qual for o desafio do seu negócio, estamos prontos para transformá-lo em oportunidade. Entre em contato hoje mesmo e descubra como nossa abordagem única pode impulsionar seus resultados.</p>
+                <a href="https://wa.me/5543996341638?text=Olá! Conheci a história da SilvestreCode e gostaria de conversar sobre como vocês podem ajudar meu negócio." class="btn-cta">Iniciar uma Conversa</a>
+              </div>
             </div>
           </div>
 
           <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
             <div class="portfolio-info">
-              <h3>Detalhes dos Nossos Serviços</h3>
-              <ul>
-                <li><strong>Design Personalizado:</strong> Escolha entre uma variedade de páginas criativas e atrativas.</li>
-                <li><strong>Funcionalidades Sob Medida:</strong> Defina as funcionalidades que seu site precisará para atender suas necessidades.</li>
-                <li><strong>Entrega Rápida:</strong> Compromisso com prazos acessíveis e ágeis.</li>
-                <li><strong>Manutenção Gratuita:</strong> Oferecemos até 2 meses de manutenção após o lançamento.</li>
-                <li><strong>Atualizações Regulares:</strong> Mantenha seu site sempre atualizado com nossos serviços contínuos.</li>
-          
-                <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem? Tenho interesse em seus serviços, pode me ajudar?" class="btn-visit align-self-start">Entre em Contato</a></li>
+              <h3>SilvestreCode em Números</h3>
+              <ul class="stats-list">
+                <li>
+                  <div class="stat-number">2+</div>
+                  <div class="stat-label">Anos de Experiência</div>
+                </li>
+                <li>
+                  <div class="stat-number">43+</div>
+                  <div class="stat-label">Projetos Entregues</div>
+                </li>
+                <li>
+                  <div class="stat-number">97%</div>
+                  <div class="stat-label">Taxa de Satisfação</div>
+                </li>
+                <li>
+                  <div class="stat-number">32+</div>
+                  <div class="stat-label">Processos Automatizados</div>
+                </li>
               </ul>
             </div>
+            
+            <div class="portfolio-info mt-4">
+              <h3>Áreas de Especialidade</h3>
+              <ul>
+                <li><strong>Desenvolvimento Web:</strong> Sites, plataformas e sistemas personalizados</li>
+                <li><strong>Automação de Processos:</strong> Fluxos operacionais otimizados</li>
+                <li><strong>Chatbots Inteligentes:</strong> Atendimento automatizado eficiente</li>
+                <li><strong>Consultoria em Gestão:</strong> Metodologias ágeis e processos</li>
+                <li><strong>Sistemas de Avaliação:</strong> Análise de desempenho com IA</li>
+                <li><strong>Marketing Digital:</strong> Estratégias completas de presença online</li>
+                <li><a href="https://wa.me/5543996341638?text=Olá! Gostaria de conhecer mais sobre os serviços da SilvestreCode." class="btn-visit align-self-start">Fale Conosco</a></li>
+              </ul>
+            </div>
+            
+            <div class="portfolio-info mt-4">
+              <h3>Depoimentos</h3>
+              <div class="mini-testimonial">
+                <p>"A equipe da SilvestreCode transformou completamente nosso processo de avaliação de desempenho. Resultados impressionantes!"</p>
+                <div class="mini-testimonial-author">
+                  <img src="/api/placeholder/40/40" alt="Cliente" class="mini-avatar">
+                  <span>Carlos Eduardo - RH</span>
+                </div>
+              </div>
+              <div class="mini-testimonial">
+                <p>"O chatbot desenvolvido para nossa empresa reduziu em 60% o tempo de resposta ao cliente. Excelente trabalho!"</p>
+                <div class="mini-testimonial-author">
+                  <img src="/api/placeholder/40/40" alt="Cliente" class="mini-avatar">
+                  <span>Luciana Santos - CEO</span>
+                </div>
+              </div>
+              <a href="#" class="see-more-link">Ver mais depoimentos</a>
+            </div>
+            
+            <div class="portfolio-info mt-4">
+              <h3>Nossa Equipe</h3>
+              <div class="team-gallery">
+                <img src="/api/placeholder/80/80" alt="Membro da equipe" class="team-avatar">
+                <img src="/api/placeholder/80/80" alt="Membro da equipe" class="team-avatar">
+                <img src="/api/placeholder/80/80" alt="Membro da equipe" class="team-avatar">
+                <img src="/api/placeholder/80/80" alt="Membro da equipe" class="team-avatar">
+                <img src="/api/placeholder/80/80" alt="Membro da equipe" class="team-avatar">
+                <img src="/api/placeholder/80/80" alt="Membro da equipe" class="team-avatar">
+              </div>
+              <a href="#" class="see-more-link">Conheça nossa equipe</a>
+            </div>
           </div>
-          
-
         </div>
-
       </div>
-
     </section><!-- /Portfolio Details Section -->
+  
+    <!-- Custom CSS for added elements -->
+    <style>
+      /* Timeline Style */
+      .timeline {
+        position: relative;
+        margin-bottom: 30px;
+      }
+      
+      .timeline-item {
+        position: relative;
+        margin-bottom: 20px;
+        padding-left: 30px;
+      }
+      
+      .timeline-badge {
+        position: absolute;
+        left: -10px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #e43c5c;
+        color: white;
+        border-radius: 50%;
+        font-weight: bold;
+        z-index: 1;
+      }
+      
+      .timeline-content {
+        padding-left: 15px;
+        border-left: 2px solid #e43c5c;
+        padding-bottom: 15px;
+      }
+      
+      /* Milestone Box */
+      .milestone-box {
+        background-color: #f8f9fa;
+        border-left: 5px solid #e43c5c;
+        padding: 20px;
+        margin: 30px 0;
+        border-radius: 0 8px 8px 0;
+      }
+      
+      .milestone-box.blue {
+        background-color: #eef0ff;
+      }
+      
+      .milestone-box h3 {
+        color: #e43c5c;
+        margin-bottom: 15px;
+      }
+      
+      /* Achievement List */
+      .achievement-list {
+        list-style-type: none;
+        padding-left: 5px;
+        margin-bottom: 20px;
+      }
+      
+      .achievement-list li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+      
+      .achievement-list li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #e43c5c;
+        font-weight: bold;
+      }
+      
+      /* Method List */
+      .method-list {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      
+      .method-list li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 15px;
+      }
+      
+      .method-list li:before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: #e43c5c;
+        font-weight: bold;
+      }
+      
+      /* Values Section */
+      .values-section {
+        margin: 40px 0;
+      }
+      
+      .values-row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      .value-card {
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        margin-bottom: 20px;
+        text-align: center;
+        height: 100%;
+      }
+      
+      .value-card i {
+        font-size: 2.5rem;
+        color: #e43c5c;
+        margin-bottom: 15px;
+      }
+      
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(135deg, #e43c5c 0%, #e43c5c 100%);
+        padding: 30px;
+        border-radius: 8px;
+        text-align: center;
+        color: white;
+        margin-top: 40px;
+      }
+      
+      .cta-section h3 {
+        color: white;
+        margin-bottom: 15px;
+      }
+      
+      .btn-cta {
+        display: inline-block;
+        background: white;
+        color: #e43c5c;
+        padding: 10px 30px;
+        border-radius: 50px;
+        font-weight: bold;
+        margin-top: 15px;
+        transition: all 0.3s;
+      }
+      
+      .btn-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+      
+      /* Stats List */
+      .stats-list {
+        list-style-type: none;
+        padding: 0;
+      }
+      
+      .stats-list li {
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 15px 10px;
+        background: #f8f9fa;
+        border-radius: 8px;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #e43c5c;
+      }
+      
+      .stat-label {
+        font-size: 0.9rem;
+        color: #6c757d;
+      }
+      
+      /* Mini Testimonials */
+      .mini-testimonial {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+      }
+      
+      .mini-testimonial p {
+        margin-bottom: 10px;
+        font-style: italic;
+      }
+      
+      .mini-testimonial-author {
+        display: flex;
+        align-items: center;
+      }
+      
+      .mini-avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      
+      /* Team Gallery */
+      .team-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+      
+      .team-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      
+      /* See More Link */
+      .see-more-link {
+        display: block;
+        text-align: center;
+        color: #e43c5c;
+        font-size: 0.9rem;
+        margin-top: 10px;
+      }
+      
+      /* Image Highlight */
+      .image-highlight {
+        margin: 30px 0;
+      }
+      
+      .caption {
+        text-align: center;
+        font-style: italic;
+        margin-top: 10px;
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
+    </style>
+  </main>
 
   </main>
   <footer id="footer" class="footer dark-background">
@@ -236,8 +608,8 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">SILVESTRE.CODE</span>
+          <a href="{% url 'index' %}">
+            <img src="{% static 'assets/img/logoo.png' %}" alt="Silvestre.Code Logo" class="logo-img" style="height: 30px; width: auto;">
           </a>
           <p>
             Digitalizar seu negócio amplia seu alcance, melhora a eficiência e facilita o atendimento. Com a presença online, você se mantém competitivo e acessa novas oportunidades de crescimento.

@@ -39,3 +39,10 @@ class PortfolioItem(models.Model):
     def __str__(self):
         return self.project_name
 
+
+class Media(models.Model):
+    nome = models.CharField(max_length=255)
+    foto = models.ImageField(upload_to='media/fotos/')
+
+    def __str__(self):
+        return f"{self.nome}"

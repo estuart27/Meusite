@@ -1,0 +1,467 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Consultorias | SilvestreCode</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">  
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Tempo
+  * Template URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'index' %}">
+        <img src="{% static 'assets/img/logoo.png' %}" alt="Silvestre.Code Logo" class="logo-img" style="height: 80px; width: auto;">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'index' %}" class="active">Volta</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" style="background-image: url(assets/img/page-title-bg.webp);">
+      <div class="container position-relative">
+        <h1>Consultorias</h1>
+        <p>Somos especialistas em transformação digital para negócios, oferecendo serviços completos de presença online, marketing digital e automação. Nossa missão é impulsionar seu crescimento com estratégias personalizadas e soluções eficientes que realmente geram resultados.</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="current">Consultorias</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+  
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+  
+      <div class="container" data-aos="fade-up">
+    
+        <div class="portfolio-details-slider swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "1",
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              },
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            {% for item in media_items %}
+            <div class="swiper-slide">
+              <img src="{{ item.foto.url }}" alt="{{ item.nome }}">
+            </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+    
+  
+        <div class="row justify-content-between gy-4 mt-4">
+  
+          <div class="col-lg-8" data-aos="fade-up">
+            <div class="portfolio-description">
+              <h2>Transforme seu Negócio com nossa Expertise Digital</h2>
+              <p>
+                Atuamos na vanguarda da transformação digital, oferecendo soluções completas que potencializam o crescimento e a visibilidade da sua empresa. Nossa especialidade está em criar estratégias personalizadas que conectam seu negócio ao público certo, no momento certo e nos canais certos.
+              </p>
+              <p>
+                Por que escolher nossos serviços? Porque entendemos que cada negócio é único. Não oferecemos pacotes padronizados, mas sim estratégias customizadas que se alinham perfeitamente aos seus objetivos. Trabalhamos como uma extensão do seu time, comprometidos com resultados mensuráveis e crescimento sustentável.
+              </p>
+              <p>
+                Seja para dar os primeiros passos no mundo digital ou para aprimorar sua presença atual, estamos prontos para impulsionar seu negócio ao próximo nível com nossas soluções especializadas.
+              </p>
+  
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>No mundo atual, não estar no digital não é apenas perder oportunidades – é entregar seus clientes à concorrência.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <div>
+                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                  <h3>Ana Oliveira</h3>
+                  <h4>Empreendedora de Sucesso</h4>
+                </div>
+              </div>
+  
+              
+              <h3>IFood para Restaurantes</h3>
+              <p>
+                Estar no iFood não é mais uma opção, é uma necessidade para restaurantes que desejam ampliar seu alcance e aumentar o faturamento. Nosso serviço de implementação e otimização no iFood vai muito além do cadastro básico. Desenvolvemos estratégias completas que incluem:
+              </p>
+              <ul class="service-features">
+                <li>Configuração profissional do seu cardápio com descrições atrativas e fotos otimizadas</li>
+                <li>Estratégias de precificação inteligente para maximizar margens e volume</li>
+                <li>Otimização para os algoritmos do iFood, melhorando seu posicionamento nas buscas</li>
+                <li>Análise de desempenho e ajustes contínuos para aumentar suas vendas</li>
+                <li>Integração com seus outros canais de venda para uma gestão unificada</li>
+              </ul>
+              <p>
+                Com nossa expertise, seu restaurante não será apenas mais um no iFood, mas se destacará como uma opção preferencial para os clientes da plataforma.
+              </p>
+                          
+              <h3>Google Meu Negócio</h3>
+              <p>
+                Ser encontrado localmente é fundamental para qualquer negócio. O Google Meu Negócio é uma ferramenta poderosa e gratuita que, quando bem otimizada, funciona como uma vitrine virtual disponível 24/7. Nosso serviço especializado inclui:
+              </p>
+              <ul class="service-features">
+                <li>Configuração completa ou otimização do seu perfil existente</li>
+                <li>Produção de fotos profissionais para destacar seu estabelecimento</li>
+                <li>Implementação de palavras-chave estratégicas para melhor ranqueamento</li>
+                <li>Estratégias para geração e gestão de avaliações positivas</li>
+                <li>Publicações regulares e atualizações de informações para manter seu perfil ativo</li>
+              </ul>
+              <p>
+                Um perfil bem gerenciado no Google Meu Negócio pode aumentar significativamente seu tráfego de clientes e construir credibilidade instantânea.
+              </p>
+                          
+              <h3>Tráfego Pago (ADS)</h3>
+              <p>
+                Alcance imediatamente seu público-alvo com campanhas de anúncios estrategicamente planejadas. Nosso serviço de Tráfego Pago é desenvolvido para maximizar seu ROI com:
+              </p>
+              <ul class="service-features">
+                <li>Análise detalhada do seu mercado e concorrência</li>
+                <li>Criação de campanhas segmentadas no Google Ads, Facebook Ads e Instagram Ads</li>
+                <li>Desenvolvimento de criativos persuasivos e landing pages de alta conversão</li>
+                <li>Monitoramento diário com ajustes para otimização contínua</li>
+                <li>Relatórios transparentes com métricas claras e recomendações estratégicas</li>
+              </ul>
+              <p>
+                Trabalhamos com orçamentos flexíveis, sempre focados em entregar o melhor retorno para cada real investido em publicidade.
+              </p>
+  
+              <h3>Redes Sociais</h3>
+              <p>
+                Transforme suas redes sociais em canais efetivos de relacionamento e vendas. Nossa gestão profissional vai além de apenas postar conteúdo – construímos uma estratégia digital completa:
+              </p>
+              <ul class="service-features">
+                <li>Planejamento estratégico de conteúdo alinhado aos seus objetivos de negócio</li>
+                <li>Criação de posts profissionais com design personalizado para sua marca</li>
+                <li>Calendário editorial consistente com os melhores horários para engajamento</li>
+                <li>Gestão de comunidade com respostas rápidas e interações estratégicas</li>
+                <li>Análise de métricas para otimização contínua da sua estratégia</li>
+              </ul>
+              <p>
+                Cuidamos da sua presença digital para que você possa focar no core business da sua empresa, sabendo que sua marca está construindo autoridade e relacionamento com seu público.
+              </p>
+  
+              <h3>Chatbots e Automações</h3>
+              <p>
+                Economize tempo, reduza custos e melhore o atendimento com nossas soluções de automação personalizadas:
+              </p>
+              <ul class="service-features">
+                <li>Desenvolvimento de chatbots inteligentes para WhatsApp, site e redes sociais</li>
+                <li>Automação de processos repetitivos de vendas e atendimento</li>
+                <li>Integração entre plataformas para fluxo contínuo de informações</li>
+                <li>Sistemas de qualificação automática de leads e nutrição de clientes</li>
+                <li>Relatórios de desempenho e ajustes para melhoria contínua</li>
+              </ul>
+              <p>
+                Nossas automações são desenvolvidas para parecerem humanas e resolverem problemas reais, criando experiências positivas para seus clientes enquanto liberam sua equipe para tarefas estratégicas.
+              </p>
+  
+              <h3>Consultorias Especializadas</h3>
+              <p>
+                Nossas consultorias são um investimento estratégico para negócios que desejam acelerar seu crescimento digital com conhecimento especializado:
+              </p>
+              <div class="consultancy-box">
+                <h4>Por que investir em consultoria?</h4>
+                <ul>
+                  <li><strong>Visão externa especializada:</strong> Identificamos oportunidades e gargalos que muitas vezes passam despercebidos quando você está imerso no dia a dia.</li>
+                  <li><strong>Economize tempo e recursos:</strong> Evite o custoso processo de tentativa e erro com estratégias já testadas e comprovadas.</li>
+                  <li><strong>Resultados mais rápidos:</strong> Acelere seu crescimento com planos de ação direcionados para objetivos específicos.</li>
+                  <li><strong>Capacitação da sua equipe:</strong> Transferimos conhecimento para que sua equipe possa dar continuidade às estratégias.</li>
+                  <li><strong>Adaptação às mudanças:</strong> O mercado digital evolui constantemente, e mantemos você atualizado com as melhores práticas.</li>
+                </ul>
+              </div>
+              
+              <p>
+                Oferecemos consultorias em todas as nossas áreas de especialização, com pacotes personalizados que podem incluir diagnósticos iniciais, planos estratégicos, implementação assistida e acompanhamento de resultados.
+              </p>
+  
+              <div class="cta-box">
+                <h4>Agende uma Consultoria Gratuita</h4>
+                <p>Vamos analisar seu negócio e identificar oportunidades de crescimento digital em uma sessão estratégica sem compromisso.</p>
+                <a href="https://wa.me/5543996341638?text=Olá! Tenho interesse em agendar uma consultoria gratuita para meu negócio." class="btn-cta">Quero uma Análise Gratuita</a>
+              </div>
+  
+              <p>
+                Em um mercado cada vez mais competitivo, a transformação digital não é apenas uma opção, mas uma necessidade para empresas que desejam prosperar. Nosso objetivo é simplificar essa jornada, oferecendo soluções completas que potencializam seu crescimento enquanto você foca no que faz de melhor.
+              </p>
+              <p>
+                Não adiamos mais a evolução do seu negócio. Entre em contato agora mesmo e descubra como podemos impulsionar seus resultados com estratégias digitais personalizadas e eficientes.
+              </p>
+            </div>
+          </div>
+  
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-info">
+              <h3>Nossos Diferenciais</h3>
+              <ul>
+                <li><strong>Estratégias Personalizadas:</strong> Cada solução é desenvolvida especificamente para o seu negócio.</li>
+                <li><strong>Resultados Mensuráveis:</strong> Trabalhamos com metas claras e relatórios transparentes.</li>
+                <li><strong>Equipe Especializada:</strong> Profissionais com experiência comprovada em cada área de atuação.</li>
+                <li><strong>Atendimento Próximo:</strong> Comunicação direta e constante durante todo o processo.</li>
+                <li><strong>Tecnologia Avançada:</strong> Utilizamos as ferramentas mais modernas do mercado.</li>
+                <li><a href="https://wa.me/5543996341638?text=Olá! Gostaria de saber mais sobre seus serviços digitais." class="btn-visit align-self-start">Fale Conosco</a></li>
+              </ul>
+            </div>
+            
+            
+            <div class="success-box mt-4">
+              <h3>Histórias de Sucesso</h3>
+              <div class="success-item">
+                <h4>+143%</h4>
+                <p>Aumento em vendas para restaurante após implementação no iFood</p>
+              </div>
+              <div class="success-item">
+                <h4>5x</h4>
+                <p>Mais visitas após otimização do Google Meu Negócio</p>
+              </div>
+              <div class="success-item">
+                <h4>ROI de 320%</h4>
+                <p>Em campanhas de tráfego pago para e-commerce</p>
+              </div>
+              <div class="success-item">
+                <h4>-40%</h4>
+                <p>Redução em custos operacionais com automações</p>
+              </div>
+            </div>
+          </div>
+          
+  
+        </div>
+  
+      </div>
+  
+    </section><!-- /Portfolio Details Section -->
+  
+    <!-- Custom CSS for added elements -->
+    <style>
+      .service-features {
+        margin-bottom: 25px;
+        padding-left: 20px;
+      }
+      
+      .service-features li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 15px;
+      }
+      
+      .service-features li:before {
+        content: "→";
+        position: absolute;
+        left: -10px;
+        color: #4154f1;
+      }
+      
+      .consultancy-box {
+        background: #f8f9fa;
+        border-left: 4px solid #e43c5c;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 0 5px 5px 0;
+      }
+      
+      .cta-box {
+        background: #e43c5c;
+        color: white;
+        padding: 25px;
+        border-radius: 8px;
+        margin: 30px 0;
+        text-align: center;
+      }
+      
+      .cta-box h4 {
+        color: white;
+        margin-bottom: 15px;
+      }
+      
+      .btn-cta {
+        display: inline-block;
+        background: white;
+        color: #e43c5c;
+        padding: 10px 25px;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: 15px;
+        transition: all 0.3s;
+      }
+      
+      .btn-cta:hover {
+        background: #f0f0f0;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+      
+      .success-box {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      
+      .success-item {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #e9ecef;
+        padding-bottom: 15px;
+      }
+      
+      .success-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      
+      .success-item h4 {
+        color: #e43c5c;
+        font-size: 24px;
+        margin-bottom: 5px;
+      }
+      
+      .contact-form .form-control {
+        margin-bottom: 10px;
+      }
+    </style>
+  </main>
+
+  </main>
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="{% url 'index' %}">
+            <img src="{% static 'assets/img/logoo.png' %}" alt="Silvestre.Code Logo" class="logo-img" style="height: 30px; width: auto;">
+          </a>
+          <p>
+            Digitalizar seu negócio amplia seu alcance, melhora a eficiência e facilita o atendimento. Com a presença online, você se mantém competitivo e acessa novas oportunidades de crescimento.
+          </p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/estuartsilvestre24"><i class="bi bi-instagram"></i></a>
+            <a href="https://wa.me/5543996341638"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Outros Serviços</h4>
+          <ul>
+            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Web Design</a></li>
+            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Trafego Pago</a></li>
+            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Chatbot</a></li>
+            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Google Meu Negocio</a></li>
+            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Automação</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contato</h4>
+          <p></p>
+          <p class="mt-4"><strong>Telefone:</strong> <span>+55 (43) 99634-1638</span></p>
+          <p><strong>Email:</strong> <span>estuartsilvestre24@gmail.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">SilvestreCode</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="#">SilvestreCode</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

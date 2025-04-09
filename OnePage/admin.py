@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Mensagem,PortfolioItem
+from .models import Mensagem,PortfolioItem, Media
 
 @admin.register(Mensagem)
 class ContactRequestAdmin(admin.ModelAdmin):
@@ -7,3 +7,4 @@ class ContactRequestAdmin(admin.ModelAdmin):
 
 
 admin.site.register(PortfolioItem)
+admin.site.register(Media)

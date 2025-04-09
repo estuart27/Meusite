@@ -10,7 +10,7 @@ urlpatterns = [
     path('', views.index, name='index'),  # Exemplo de URL para a view 'home'
     path('sobrenois', views.sobrenois, name='sobrenois'),  # Exemplo de URL para a view 'home'
     path('api/chat/', views.chat_api, name='chat_api'),  # API do chat
-
+    path('consultorias/',views.consultorias, name='consultoria'),  
 
 ]
 

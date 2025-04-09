@@ -48,9 +48,10 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
-        <h1 class="sitename">Silvestre.Code</h1>
+      <a href="{% url 'index' %}">
+        <img src="{% static 'assets/img/logoo.png' %}" alt="Silvestre.Code Logo" class="logo-img" style="height: 80px; width: auto;">
       </a>
+      
 
       <nav id="navmenu" class="navmenu">
         <ul>
@@ -58,8 +59,10 @@
           <li><a href="#services">Serviços</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#contact">Contato</a></li>
+          <li><a href="{% url 'consultoria' %}">Consultorias</a></li>
           <li><a href="{% url 'sobrenois' %}">Quem Somos</a></li>
-          <ul>
+
+          {% comment %} <ul>
             <li class="dropdown"><a href="#"><span>Consultorias</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
                 <li><a href="#">IFood para Restaurantes</a></li>
@@ -69,7 +72,7 @@
                 <li><a href="#">Chatbots e Automações</a></li>
               </ul>
             </li>
-        </ul>
+        </ul> {% endcomment %}
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
@@ -611,8 +614,8 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">SILVESTRE.CODE</span>
+          <a href="{% url 'index' %}">
+            <img src="{% static 'assets/img/logoo.png' %}" alt="Silvestre.Code Logo" class="logo-img" style="height: 30px; width: auto;">
           </a>
           <p>"Porque Deus tanto amou o mundo que deu o seu Filho Unigênito, para que todo o que nele crer não pereça, mas tenha a vida eterna."</p>
           <div class="social-links d-flex mt-4">
