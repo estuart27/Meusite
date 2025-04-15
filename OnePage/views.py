@@ -85,8 +85,9 @@ def formulario_projeto(request):
         form = BriefingForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()  # Salva os dados no banco de dados
-            return render(request, "Onepage/formulario_sucesso.html")  # página de sucesso
+            return render(request, "OnePage/formulario_sucesso.html")  # página de sucesso
     else:
         form = BriefingForm()
     
-    return render(request, "Onepage/formulario.html", {"form": form})
+    return render(request, "OnePage/formulario.html", {"form": form})
+
