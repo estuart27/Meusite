@@ -93,5 +93,9 @@ class Briefing(models.Model):
     mensagem_final = models.TextField(blank=True)
     data_envio = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name = 'Briefing'
+        verbose_name_plural = 'Demandas'
+
     def __str__(self):
         return f"{self.nome} - {self.tipo_projeto}"
