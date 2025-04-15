@@ -46,3 +46,52 @@ class Media(models.Model):
 
     def __str__(self):
         return f"{self.nome}"
+    
+
+class Briefing(models.Model):
+    TIPO_PROJETO_CHOICES = [
+        ("site", "Desenvolvimento de Site"),
+        ("chatbot", "Chatbot com IA"),
+        ("google_negocio", "Consultoria Google Meu Negócio"),
+        ("ifood", "Consultoria para iFood"),
+        ("trafego", "Tráfego Pago"),
+        ("redes", "Consultoria para Redes Sociais"),
+        ("logo", "Criação de Logotipo"),
+        ("outro", "Outro"),
+    ]
+
+    ORCAMENTO_CHOICES = [
+        ("1000-1500", "R$1.000 a R$1.500"),
+        ("1500-3000", "R$1.500 a R$3.000"),
+        ("3000-6000", "R$3.000 a R$6.000"),
+        ("sob_consulta", "A definir / Sob consulta"),
+    ]
+
+    PRAZO_CHOICES = [
+        ("1-2", "1-2 semanas"),
+        ("2-4", "2-4 semanas"),
+        ("4-8", "4-8 semanas"),
+        ("flexivel", "Prazo flexível"),
+    ]
+
+    EXPERIENCIA_CHOICES = [
+        ("iniciante", "Sou iniciante, preciso de orientação"),
+        ("intermediario", "Já tenho alguma experiência"),
+        ("avancado", "Já participei de projetos semelhantes"),
+    ]
+
+    nome = models.CharField(max_length=100)
+    email = models.EmailField()
+    whatsapp = models.CharField(max_length=20, blank=True)
+    tipo_projeto = models.CharField(max_length=20, choices=TIPO_PROJETO_CHOICES)
+    objetivo = models.TextField()
+    funcionalidades = models.TextField(blank=True)
+    referencias = models.TextField(blank=True)
+    orcamento = models.CharField(max_length=20, choices=ORCAMENTO_CHOICES)
+    prazo = models.CharField(max_length=20, choices=PRAZO_CHOICES)
+    experiencia = models.CharField(max_length=20, choices=EXPERIENCIA_CHOICES)
+    mensagem_final = models.TextField(blank=True)
+    data_envio = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.nome} - {self.tipo_projeto}"

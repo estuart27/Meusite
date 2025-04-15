@@ -238,7 +238,7 @@
               <div class="cta-box">
                 <h4>Agende uma Consultoria Gratuita</h4>
                 <p>Vamos analisar seu negócio e identificar oportunidades de crescimento digital em uma sessão estratégica sem compromisso.</p>
-                <a href="https://wa.me/5543996341638?text=Olá! Tenho interesse em agendar uma consultoria gratuita para meu negócio." class="btn-cta">Quero uma Análise Gratuita</a>
+                <a href={% url "formulario" %} class="btn-cta">Quero uma Análise Gratuita</a>
               </div>
   
               <p>
@@ -390,35 +390,34 @@
           <a href="{% url 'index' %}">
             <img src="{% static 'assets/img/logoo.png' %}" alt="Silvestre.Code Logo" class="logo-img" style="height: 30px; width: auto;">
           </a>
-          <p>
-            Digitalizar seu negócio amplia seu alcance, melhora a eficiência e facilita o atendimento. Com a presença online, você se mantém competitivo e acessa novas oportunidades de crescimento.
-          </p>
+          <p>"Porque Deus tanto amou o mundo que deu o seu Filho Unigênito, para que todo o que nele crer não pereça, mas tenha a vida eterna."</p>
           <div class="social-links d-flex mt-4">
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://web.facebook.com/profile.php?id=61569864961428"><i class="bi bi-facebook"></i></a>
             <a href="https://www.instagram.com/estuartsilvestre24"><i class="bi bi-instagram"></i></a>
             <a href="https://wa.me/5543996341638"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://t.me/seu-usuario"><i class="bi bi-telegram"></i></a>
           </div>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contato</a></li>
+            <li><a href="{% url 'index' %}" >Home</a></li>
+            <li><a href="{% url 'sobrenois' %}" >Sobre</a></li>
+            <li><a href="{% url 'index' %}">Serviços</a></li>
+            <li><a href="{% url 'index' %}">Portfolio</a></li>
+            <li><a href="{% url 'index' %}">Contato</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>Outros Serviços</h4>
           <ul>
-            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Web Design</a></li>
-            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Trafego Pago</a></li>
-            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Chatbot</a></li>
-            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Google Meu Negocio</a></li>
-            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Automação</a></li>
+            <li><a href="{% url 'formulario' %}">Web Design</a></li>
+            <li><a href="{% url 'formulario' %}">Trafego Pago</a></li>
+            <li><a href="{% url 'formulario' %}">Chatbot</a></li>
+            <li><a href="{% url 'formulario' %}">Google Meu Negocio</a></li>
+            <li><a href="{% url 'formulario' %}">Automação</a></li>
           </ul>
         </div>
 
@@ -435,10 +434,6 @@
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">SilvestreCode</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
         Designed by <a href="#">SilvestreCode</a>
       </div>
     </div>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crie seu Projeto - SilvestreCode</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Nunito:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --background-color: #ffffff;
+            --default-color: #444444;
+            --heading-color: #493c3e;
+            --accent-color: #e43c5c;
+            --surface-color: #ffffff;
+            --contrast-color: #ffffff;
+            
+            --nav-color: #ffffff;
+            --nav-hover-color: #e43c5c;
+            --nav-mobile-background-color: #ffffff;
+            --nav-dropdown-background-color: #ffffff;
+            --nav-dropdown-color: #444444;
+            --nav-dropdown-hover-color: #e43c5c;
+        }
+        
+        body {
+            font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", sans-serif;
+            background-color: var(--background-color);
+            color: var(--default-color);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Nunito', sans-serif;
+            color: var(--heading-color);
+        }
+        
+        .accent-bg {
+            background-color: var(--accent-color);
+        }
+        
+        .accent-text {
+            color: var(--accent-color);
+        }
+        
+        /* Estilos específicos para campos de entrada */
+        input[type="text"], 
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="url"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            background-color: #ffffff;
+            font-size: 16px;
+            color: var(--default-color);
+            transition: all 0.2s ease;
+        }
+        
+        input[type="text"]:focus, 
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        input[type="url"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(228, 60, 92, 0.2);
+            outline: none;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23444444'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+        
+        .form-field {
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-field:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .submit-btn {
+            background-color: var(--accent-color);
+            color: var(--contrast-color);
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: #d03653;
+            transform: translateY(-2px);
+        }
+
+        .home-btn {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        
+        .home-btn:hover {
+            background-color: #d03653;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 py-10">
+    <div class="max-w-3xl mx-auto">
+        <!-- Logo e cabeçalho -->
+        <div class="text-center mb-8">
+            <div class="inline-block bg-white p-4 rounded-full shadow-md mb-4">
+                <i class="fas fa-code accent-text text-3xl"></i>
+            </div>
+            <h1 class="text-3xl font-bold">
+                <span class="accent-text">Silvestre</span>Code
+            </h1>
+            <p class="text-gray-600 mt-2">Transformando suas ideias em realidade digital</p>
+            <!-- Botão de voltar para a página inicial -->
+            <a href="/" class="home-btn py-2 px-4 rounded-lg font-semibold inline-flex items-center mt-4">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Voltar para a Página Inicial
+            </a>
+        </div>
+
+        <!-- Card principal -->
+        <div class="bg-white shadow-lg rounded-xl overflow-hidden mb-10">
+            <!-- Cabeçalho do card -->
+            <div class="accent-bg px-8 py-6 text-white">
+                <h2 class="text-2xl font-semibold text-white">Conte sua ideia para nós</h2>
+                <p class="text-white opacity-90 mt-1">Preencha o formulário abaixo e inicie seu projeto tecnológico</p>
+            </div>
+
+            <!-- Formulário -->
+            <div class="p-8">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-field">
+                            <label class="block text-sm font-medium mb-2">
+                                {% if field.field.required %}
+                                    <span class="accent-text mr-1">*</span>
+                                {% endif %}
+                                {{ field.label }}
+                            </label>
+                            
+                            <div class="relative">
+                                <!-- Aqui substituímos o {{ field }} por uma versão estilizada -->
+                                <!-- Como não temos o exato tipo de campo, criamos um exemplo visual -->
+                                {% if field.field.widget.input_type == 'textarea' %}
+                                    <textarea name="{{ field.name }}" id="{{ field.auto_id }}" class="w-full border-2 border-gray-200 rounded-lg p-3" 
+                                    {% if field.field.required %}required{% endif %} 
+                                    placeholder="Digite aqui...">{{ field.value|default:'' }}</textarea>
+                                {% elif field.field.widget.input_type == 'select' %}
+                                    <select name="{{ field.name }}" id="{{ field.auto_id }}" 
+                                    class="w-full border-2 border-gray-200 rounded-lg p-3 bg-white"
+                                    {% if field.field.required %}required{% endif %}>
+                                        <option value="">Selecione uma opção</option>
+                                        {% for option in field.field.choices %}
+                                            <option value="{{ option.0 }}" {% if field.value == option.0 %}selected{% endif %}>
+                                                {{ option.1 }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                {% elif field.field.widget.input_type == 'checkbox' %}
+                                    <div class="flex items-center">
+                                        <input type="checkbox" name="{{ field.name }}" id="{{ field.auto_id }}" 
+                                        class="w-5 h-5 accent-text" 
+                                        {% if field.value %}checked{% endif %} 
+                                        {% if field.field.required %}required{% endif %}>
+                                        <label for="{{ field.auto_id }}" class="ml-2">{{ field.label }}</label>
+                                    </div>
+                                {% elif field.field.widget.input_type == 'file' %}
+                                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                                        <input type="file" name="{{ field.name }}" id="{{ field.auto_id }}" 
+                                        class="hidden" 
+                                        {% if field.field.required %}required{% endif %}>
+                                        <label for="{{ field.auto_id }}" class="cursor-pointer">
+                                            <i class="fas fa-cloud-upload-alt text-2xl mb-2 accent-text"></i>
+                                            <p>Clique para selecionar ou arraste arquivos aqui</p>
+                                        </label>
+                                    </div>
+                                {% else %}
+                                    <input type="{{ field.field.widget.input_type|default:'text' }}" 
+                                    name="{{ field.name }}" 
+                                    id="{{ field.auto_id }}" 
+                                    value="{{ field.value|default:'' }}" 
+                                    class="w-full border-2 border-gray-200 rounded-lg p-3" 
+                                    {% if field.field.required %}required{% endif %} 
+                                    placeholder="Digite aqui...">
+                                {% endif %}
+                                
+                                {% if field.help_text %}
+                                    <p class="text-xs text-gray-500 mt-1 italic">{{ field.help_text }}</p>
+                                {% endif %}
+                                {% for error in field.errors %}
+                                    <p class="text-sm text-red-600 mt-1 flex items-center">
+                                        <i class="fas fa-exclamation-circle mr-1"></i>
+                                        {{ error }}
+                                    </p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <!-- Seção de confirmação -->
+                    <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 mt-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-info-circle accent-text"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-sm font-medium">Quase lá!</h3>
+                                <p class="text-sm text-gray-600 mt-1">Ao enviar este formulário, nossa equipe entrará em contato em até 48 horas para discutir os próximos passos do seu projeto.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botão de envio -->
+                    <button type="submit" class="w-full submit-btn py-3 px-6 rounded-xl text-lg font-semibold mt-6 flex items-center justify-center group">
+                        <span>Enviar Projeto</span>
+                        <i class="fas fa-paper-plane ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="text-center text-gray-500 text-sm">
+            <p>© 2025 SilvestreCode • Todos os direitos reservados</p>
+            <p class="mt-1">Transformando ideias em soluções tecnológicas</p>
+        </div>
+    </div>
+</body>
+</html>

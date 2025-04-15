@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .utils import responder_com_pdf
-from .forms import ContactRequestForm
+from .forms import ContactRequestForm,BriefingForm
 from .models import PortfolioItem,Media
 import logging
 import json
@@ -77,3 +77,16 @@ def chat_api(request):
 def consultorias(request):
     media_items = Media.objects.all()  # Obtém todos os itens do portfólio
     return render(request, 'OnePage/consultorias.html', {'media_items': media_items})
+
+
+
+def formulario_projeto(request):
+    if request.method == "POST":
+        form = BriefingForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()  # Salva os dados no banco de dados
+            return render(request, "Onepage/formulario_sucesso.html")  # página de sucesso
+    else:
+        form = BriefingForm()
+    
+    return render(request, "Onepage/formulario.html", {"form": form})

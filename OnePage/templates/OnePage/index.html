@@ -55,12 +55,14 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#hero" class="active">Inicio</a></li>
           <li><a href="#services">Serviços</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#contact">Contato</a></li>
           <li><a href="{% url 'consultoria' %}">Consultorias</a></li>
           <li><a href="{% url 'sobrenois' %}">Quem Somos</a></li>
+          <li><a href="{% url 'formulario' %}">Peça seu Projeto</a></li>
+
 
           {% comment %} <ul>
             <li class="dropdown"><a href="#"><span>Consultorias</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -330,8 +332,8 @@
       <h3 class="cta-title">Gostou do meu trabalho?</h3>
       <p class="cta-description">Vamos criar algo incrível juntos!</p>
       <div class="cta-buttons">
-        <a href="#contact" class="btn-primary pulse-effect">Iniciar Projeto</a>
-        <a href="/curriculo" class="btn-secondary">Ver Currículo</a>
+        <a href="{% url 'formulario' %}" class="btn-primary pulse-effect">Conte sua Ideia para Nós</a>
+        <a href="{% url 'sobrenois' %}" class="btn-secondary">Saiba mais</a>
       </div>
     </div>
 
@@ -629,22 +631,22 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contato</a></li>
+            <li><a href="{% url 'index' %}" >Home</a></li>
+            <li><a href="{% url 'sobrenois' %}" >Sobre</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contato</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>Outros Serviços</h4>
           <ul>
-            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Web Design</a></li>
-            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Trafego Pago</a></li>
-            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Chatbot</a></li>
-            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Google Meu Negocio</a></li>
-            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Automação</a></li>
+            <li><a href="{% url 'formulario' %}">Web Design</a></li>
+            <li><a href="{% url 'formulario' %}">Trafego Pago</a></li>
+            <li><a href="{% url 'formulario' %}">Chatbot</a></li>
+            <li><a href="{% url 'formulario' %}">Google Meu Negocio</a></li>
+            <li><a href="{% url 'formulario' %}">Automação</a></li>
           </ul>
         </div>
 

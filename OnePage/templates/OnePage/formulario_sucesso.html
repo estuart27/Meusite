@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Enviado com Sucesso - SilvestreCode</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Nunito:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --background-color: #ffffff;
+            --default-color: #444444;
+            --heading-color: #493c3e;
+            --accent-color: #e43c5c;
+            --surface-color: #ffffff;
+            --contrast-color: #ffffff;
+        }
+        
+        body {
+            font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", sans-serif;
+            background-color: var(--background-color);
+            color: var(--default-color);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Nunito', sans-serif;
+            color: var(--heading-color);
+        }
+        
+        .accent-text {
+            color: var(--accent-color);
+        }
+        
+        .accent-bg {
+            background-color: var(--accent-color);
+        }
+        
+        /* Animação de check mark */
+        .checkmark-circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        }
+        
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 4;
+            stroke: var(--accent-color);
+            stroke-miterlimit: 10;
+            margin: 0 auto;
+            box-shadow: inset 0px 0px 0px var(--accent-color);
+            animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+        }
+        
+        .checkmark-check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+        }
+        
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        @keyframes scale {
+            0%, 100% {
+                transform: none;
+            }
+            50% {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+        
+        @keyframes fill {
+            100% {
+                box-shadow: inset 0px 0px 0px 30px white;
+            }
+        }
+        
+        /* Animação de confete */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f0f;
+            opacity: 0;
+        }
+        
+        .countdown {
+            font-family: 'Nunito', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="max-w-md w-full mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div class="accent-bg py-6 px-8 text-center">
+            <h1 class="text-white text-2xl font-bold">Projeto Enviado com Sucesso!</h1>
+        </div>
+        
+        <div class="p-8 text-center">
+            <!-- Ícone de sucesso animado -->
+            <div class="py-6">
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                    <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+            </div>
+            
+            <div class="mt-4">
+                <h2 class="text-xl font-semibold text-gray-800">Obrigado por compartilhar sua ideia!</h2>
+                <p class="text-gray-600 mt-3">Nossa equipe de especialistas irá analisar seu projeto e entraremos em contato em breve.</p>
+                
+                <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                    <p class="text-blue-800 flex items-center justify-center">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        <span>Você será redirecionado para a página inicial em <span id="countdown" class="countdown font-bold accent-text">5:00</span></span>
+                    </p>
+                </div>
+                
+                <div class="mt-8 flex flex-col space-y-3">
+                    <a href="/formulario" class="flex items-center justify-center py-3 px-4 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition">
+                        <i class="fas fa-plus-circle mr-2"></i>
+                        <span>Enviar outro projeto</span>
+                    </a>
+                    
+                    <a href="{% url 'index' %}" class="flex items-center justify-center py-3 px-4 accent-bg text-white rounded-lg hover:bg-opacity-90 transition pulse">
+                        <i class="fas fa-home mr-2"></i>
+                        <span>Voltar para página inicial</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-6 text-center text-gray-500 text-sm">
+        <p>© 2025 SilvestreCode • Todos os direitos reservados</p>
+    </div>
+    
+    <!-- Script para o redirecionamento automático e animações -->
+    <script>
+        // Redirecionamento após 5 minutos
+        const countdownEl = document.getElementById('countdown');
+        let totalSeconds = 5 * 60; // 5 minutos em segundos
+        
+        const countdownInterval = setInterval(function() {
+            totalSeconds--;
+            
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+            
+            // Formatar para mostrar sempre 2 dígitos (00:00)
+            countdownEl.textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+            
+            // Se o contador chegar a zero, redirecionar
+            if (totalSeconds <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = '/OnePage/index.html';
+            }
+            
+            // Adicionar a classe pulse quando estiver nos últimos 30 segundos
+            if (totalSeconds <= 30) {
+                countdownEl.classList.add('accent-text', 'font-bold');
+            }
+        }, 1000);
+        
+        // Animação de confetes
+        function createConfetti() {
+            const colors = ['#e43c5c', '#ffcc00', '#00cc88', '#3366ff', '#cc66ff'];
+            const container = document.body;
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = -10 + 'px';
+                confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+                
+                container.appendChild(confetti);
+                
+                const size = Math.random() * 10 + 5;
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                
+                // Animação de queda
+                const animation = confetti.animate([
+                    { top: '-10px', opacity: 1 },
+                    { top: '100vh', opacity: 0 }
+                ], {
+                    duration: Math.random() * 3000 + 2000,
+                    easing: 'cubic-bezier(.37,1.04,.68,.98)',
+                    fill: 'forwards'
+                });
+                
+                animation.onfinish = () => {
+                    confetti.remove();
+                };
+            }
+        }
+        
+        // Iniciar confetes após um pequeno delay
+        setTimeout(createConfetti, 800);
+    </script>
+</body>
+</html>

@@ -290,28 +290,6 @@
           </div>
 
           <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="portfolio-info">
-              <h3>SilvestreCode em Números</h3>
-              <ul class="stats-list">
-                <li>
-                  <div class="stat-number">2+</div>
-                  <div class="stat-label">Anos de Experiência</div>
-                </li>
-                <li>
-                  <div class="stat-number">43+</div>
-                  <div class="stat-label">Projetos Entregues</div>
-                </li>
-                <li>
-                  <div class="stat-number">97%</div>
-                  <div class="stat-label">Taxa de Satisfação</div>
-                </li>
-                <li>
-                  <div class="stat-number">32+</div>
-                  <div class="stat-label">Processos Automatizados</div>
-                </li>
-              </ul>
-            </div>
-            
             <div class="portfolio-info mt-4">
               <h3>Áreas de Especialidade</h3>
               <ul>
@@ -328,33 +306,31 @@
             <div class="portfolio-info mt-4">
               <h3>Depoimentos</h3>
               <div class="mini-testimonial">
-                <p>"A equipe da SilvestreCode transformou completamente nosso processo de avaliação de desempenho. Resultados impressionantes!"</p>
+                <p>"O processo de avaliação da SilvestreCode, com suporte de IA, otimizou nossas análises de nossos funcionarios e trouxe feedbacks mais precisos e construtivos de nossos colaboladores."</p>
                 <div class="mini-testimonial-author">
-                  <img src="/api/placeholder/40/40" alt="Cliente" class="mini-avatar">
-                  <span>Carlos Eduardo - RH</span>
+                  <img src="{% static 'assets/img/estuart.png' %}" alt="Cliente" class="mini-avatar">
+                  <span>Estuart Matheus - Gestor de Logistica </span>
                 </div>
               </div>
               <div class="mini-testimonial">
-                <p>"O chatbot desenvolvido para nossa empresa reduziu em 60% o tempo de resposta ao cliente. Excelente trabalho!"</p>
+                <p>"A automação implementada pela SilvestreCode revolucionou nossas análises, aumentando a assertividade e reduzindo significativamente o tempo gasto em tarefas manuais."</p>
                 <div class="mini-testimonial-author">
-                  <img src="/api/placeholder/40/40" alt="Cliente" class="mini-avatar">
-                  <span>Luciana Santos - CEO</span>
+                  <img src="{% static 'assets/img/sem.jpeg' %}"alt="Cliente" class="mini-avatar">
+                  <span>Estevan Guilherme - Supervisor de Logistica</span>
                 </div>
               </div>
               <a href="#" class="see-more-link">Ver mais depoimentos</a>
             </div>
             
             <div class="portfolio-info mt-4">
-              <h3>Nossa Equipe</h3>
-              <div class="team-gallery">
-                <img src="/api/placeholder/80/80" alt="Membro da equipe" class="team-avatar">
-                <img src="/api/placeholder/80/80" alt="Membro da equipe" class="team-avatar">
-                <img src="/api/placeholder/80/80" alt="Membro da equipe" class="team-avatar">
-                <img src="/api/placeholder/80/80" alt="Membro da equipe" class="team-avatar">
-                <img src="/api/placeholder/80/80" alt="Membro da equipe" class="team-avatar">
-                <img src="/api/placeholder/80/80" alt="Membro da equipe" class="team-avatar">
-              </div>
-              <a href="#" class="see-more-link">Conheça nossa equipe</a>
+              <h3>Comece Seu Projeto Digital</h3>
+              <p>Transforme sua ideia em realidade! Conte-nos sobre seu projeto e vamos criar algo incrível juntos. Desenvolvemos soluções tecnológicas que conectam, engajam e impulsionam resultados.</p>
+              <ul>
+                <li>
+                  <a href="{% url 'formulario' %}" class="btn-visit align-self-start">Faça um Orçamento</a>
+                  {% comment %} <p class="mt-2">Clique acima, descreva sua ideia e receba uma proposta personalizada!</p> {% endcomment %}
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -611,35 +587,34 @@
           <a href="{% url 'index' %}">
             <img src="{% static 'assets/img/logoo.png' %}" alt="Silvestre.Code Logo" class="logo-img" style="height: 30px; width: auto;">
           </a>
-          <p>
-            Digitalizar seu negócio amplia seu alcance, melhora a eficiência e facilita o atendimento. Com a presença online, você se mantém competitivo e acessa novas oportunidades de crescimento.
-          </p>
+          <p>"Porque Deus tanto amou o mundo que deu o seu Filho Unigênito, para que todo o que nele crer não pereça, mas tenha a vida eterna."</p>
           <div class="social-links d-flex mt-4">
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://web.facebook.com/profile.php?id=61569864961428"><i class="bi bi-facebook"></i></a>
             <a href="https://www.instagram.com/estuartsilvestre24"><i class="bi bi-instagram"></i></a>
             <a href="https://wa.me/5543996341638"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://t.me/seu-usuario"><i class="bi bi-telegram"></i></a>
           </div>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contato</a></li>
+            <li><a href="{% url 'index' %}" >Home</a></li>
+            <li><a href="{% url 'sobrenois' %}" >Sobre</a></li>
+            <li><a href="{% url 'index' %}">Serviços</a></li>
+            <li><a href="{% url 'index' %}">Portfolio</a></li>
+            <li><a href="{% url 'index' %}">Contato</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>Outros Serviços</h4>
           <ul>
-            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Web Design</a></li>
-            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Trafego Pago</a></li>
-            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Chatbot</a></li>
-            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Google Meu Negocio</a></li>
-            <li><a href="https://wa.me/5543996341638?text=Oi! Tudo bem?  Tenho interresse em seus serviços , pode me ajudar ?">Automação</a></li>
+            <li><a href="{% url 'formulario' %}">Web Design</a></li>
+            <li><a href="{% url 'formulario' %}">Trafego Pago</a></li>
+            <li><a href="{% url 'formulario' %}">Chatbot</a></li>
+            <li><a href="{% url 'formulario' %}">Google Meu Negocio</a></li>
+            <li><a href="{% url 'formulario' %}">Automação</a></li>
           </ul>
         </div>
 
@@ -656,10 +631,6 @@
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">SilvestreCode</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
         Designed by <a href="#">SilvestreCode</a>
       </div>
     </div>
