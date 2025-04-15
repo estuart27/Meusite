@@ -11,9 +11,9 @@ def responder_com_pdf(mensagem: str) -> str:
     :param mensagem: Mensagem do usuário para consulta.
     :return: Resposta gerada pelo modelo.
     """
-    # caminho_pdf = '/var/www/silvestrecode/Meusite/dados.pdf' 
+    caminho_pdf = '/var/www/silvestrecode/Meusite/dados.pdf' 
 
-    caminho_pdf = 'dados.pdf' 
+    # caminho_pdf = 'dados.pdf' 
     # Configuração da chave da API
     api_key = config('CHAVE_API')
     os.environ['GROQ_API_KEY'] = api_key
