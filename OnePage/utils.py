@@ -12,6 +12,7 @@ def responder_com_pdf(mensagem: str) -> str:
     :return: Resposta gerada pelo modelo.
     """
     caminho_pdf = '/var/www/silvestrecode/Meusite/dados.pdf' 
+
     # caminho_pdf = 'dados.pdf' 
     # Configuração da chave da API
     api_key = config('CHAVE_API')

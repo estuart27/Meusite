@@ -9,13 +9,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '2m&e=73x6p_a@3rz8$&ohdp8*ox+d#9ek1^$a*5ddf@ee6e-k%'
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+# DEBUG = False
 
-# DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.silvestrecode.shop', 'silvestrecode.shop', ]
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
