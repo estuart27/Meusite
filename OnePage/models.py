@@ -22,7 +22,7 @@ class PortfolioItem(models.Model):
     
     category = models.CharField(max_length=100, choices=CATEGORY_CHOICES)
     project_name = models.CharField(max_length=200)
-    thumbnail = models.ImageField(upload_to='portfolio/thumbnails/')
+    thumbnail = models.ImageField(upload_to='portfolio/thumbnails/',blank=True, null=True)
     link = models.URLField(max_length=200, blank=True, null=True)  # Campo para o link do projeto
     description = models.TextField(blank=True, null=True)
     completion_date = models.DateField(null=True, blank=True)
