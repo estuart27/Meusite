@@ -13,6 +13,13 @@ def responder_com_pdf(mensagem: str) -> str:
     """
     caminho_pdf = '/var/www/silvestrecode/Meusite/dados.pdf' 
 
+    # Copiar o PDF(para funcionar as mudanças de arquivo no servidor )
+    # cp dados.pdf /var/www/silvestrecode/Meusite/
+
+    # # Copiar a pasta static inteira (substitui arquivos existentes)
+    # cp -r static/ /var/www/silvestrecode/Meusite/
+
+
     # Configuração da chave da API
     api_key = config('CHAVE_API')
     os.environ['GROQ_API_KEY'] = api_key
