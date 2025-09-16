@@ -91,9 +91,10 @@
           </script>
           <div class="swiper-wrapper align-items-center">
             {% for item in portfolio_items %}
-            <div class="swiper-slide">
-              <img src="{{ item.thumbnail.url }}" alt="{{ item.project_name }}">
-            </div>
+              {% if item.thumbnail %}
+              <div class="swiper-slide">
+                <img src="{{ item.thumbnail.url }}" alt="{{ item.project_name }}">
+              </div>
             {% endfor %}
           </div>
           <div class="swiper-button-prev"></div>
