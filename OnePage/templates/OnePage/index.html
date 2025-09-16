@@ -32,6 +32,48 @@
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
   <link href="{% static 'assets/css/styh.css' %}" rel="stylesheet">
 </head>
+<style>
+  .cta-buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Botão principal */
+.btn-primary {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #e84b6b; /* cor de destaque */
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: #c53b58;
+  transform: translateY(-2px);
+}
+
+/* Botão secundário */
+.btn-secondary {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 2px solid #e84b6b;
+  color: #e84b6b;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  background: #e84b6b;
+  color: #fff;
+  transform: translateY(-2px);
+}
+</style>
 
 {% if messages %}
     <div id="toast-container">
@@ -61,20 +103,6 @@
           <li><a href="#contact">Contato</a></li>
           <li><a href="{% url 'consultoria' %}">Consultorias</a></li>
           <li><a href="{% url 'sobrenois' %}">Quem Somos</a></li>
-          <li><a href="{% url 'formulario' %}">Peça seu Projeto</a></li>
-
-
-          {% comment %} <ul>
-            <li class="dropdown"><a href="#"><span>Consultorias</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">IFood para Restaurantes</a></li>
-                <li><a href="#">Google Meu Negocio</a></li>
-                <li><a href="#">Tráfego Pago (ADS)</a></li>
-                <li><a href="#">Redes Sociais</a></li>
-                <li><a href="#">Chatbots e Automações</a></li>
-              </ul>
-            </li>
-        </ul> {% endcomment %}
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
@@ -85,19 +113,30 @@
 
 <!-- Hero Section -->
 <section id="hero" class="hero section dark-background">
-  <img src="{% static 'assets/img/hero-bg.jpg'%}" alt="" data-aos="fade-in">
+  <img src="{% static 'assets/img/fundo1.jpg'%}" alt="" data-aos="fade-in">
 
   <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <!-- Título com animação -->
-        <h2 class="fade-in-element" style="transition-delay: 0.3s;">Transforme Suas Ideias em Experiências Digitais Incríveis</h2>
+        <h2 class="fade-in-element" style="transition-delay: 0.3s;">Aumente suas vendas com soluções digitais sob medida</h2>
         
         <!-- Parágrafo com animação -->
-        <p class="fade-in-element" style="transition-delay: 1.2s;">Especialista em soluções tecnológicas para impulsionar o seu negócio. Criação de sites, e-commerce, automação de marketing e gestão de redes sociais, tudo com foco em resultados e qualidade</p>
+        <p class="fade-in-element" style="transition-delay: 1.2s;">Criamos soluções digitais sob medida — IA, automação, marketing e desenvolvimento — para transformar sua ideia em resultados concretos.</p>
         
-        <!-- Botão com animação -->
-        <a href="https://wa.me/5543996341638?text=Oi! Tudo bem? Tenho interresse em seus serviços, pode me ajudar?" class="btn-get-started fade-in-element" style="transition-delay: 2s;">Fale Conosco Agora</a>
+        <div class="cta-buttons">
+            <!-- Botão principal (cheio) -->
+            <a href="{% url 'formulario' %}" class="btn-primary fade-in-element" style="transition-delay: 2s;">
+                Peça seu Projeto
+            </a>
+
+            <!-- Botão secundário (borda) -->
+            <a href="#portfolio" class="btn-secondary fade-in-element" style="transition-delay: 2.3s;">
+                Ver Portfólio
+            </a>
+        </div>
+
+        
       </div>
     </div>
   </div>
@@ -163,7 +202,7 @@
       <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
         <div class="service-item position-relative">
           <div class="icon"><i class="bi bi-cpu icon"></i></div>
-          <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem? Tenho interesse na implementação de IA para meu negócio, pode me ajudar?" class="stretched-link">Implementação de IA</a></h4>
+          <h4><a href="{% url 'detalhes_agentes' %}" class="stretched-link">Implementação de IA</a></h4>
           <p>Potencialize seu negócio com soluções de Inteligência Artificial personalizadas que automatizam processos e impulsionam resultados.</p>
         </div>
       </div><!-- End Service Item -->
@@ -171,7 +210,7 @@
       <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
         <div class="service-item position-relative">
           <div class="icon"><i class="bi bi-chat-dots icon"></i></div>
-          <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem? Tenho interesse em chatbots para meu negócio, pode me ajudar?" class="stretched-link">Chatbot</a></h4>
+          <h4><a href="{% url 'detalhes_chatbot' %}" class="stretched-link">Chatbot</a></h4>
           <p>Revolucione seu atendimento com chatbots inteligentes que respondem dúvidas 24/7, qualificam leads e convertem visitantes em clientes.</p>
         </div>
       </div><!-- End Service Item -->
@@ -195,7 +234,7 @@
       <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
         <div class="service-item position-relative">
           <div class="icon"><i class="bi bi-globe icon"></i></div>
-          <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem? Tenho interesse em desenvolvimento de sites, pode me ajudar?" class="stretched-link">Sites</a></h4>
+          <h4><a href="{% url 'detalhes_site_onepage' %}"  class="stretched-link">Sites</a></h4>
           <p>Websites profissionais e otimizados para conversão que impressionam visitantes, geram credibilidade e transformam acessos em vendas.</p>
         </div>
       </div><!-- End Service Item -->
@@ -203,7 +242,7 @@
       <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
         <div class="service-item position-relative">
           <div class="icon"><i class="bi bi-file-earmark-text icon"></i></div>
-          <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem? Tenho interesse em OnePage para meu negócio, pode me ajudar?" class="stretched-link">OnePage</a></h4>
+          <h4><a href="{% url 'detalhes_site_onepage' %}"  class="stretched-link">OnePage</a></h4>
           <p>Landing pages de alto impacto com design exclusivo e copy persuasiva, desenvolvidas para maximizar conversões e gerar resultados imediatos.</p>
         </div>
       </div><!-- End Service Item -->
@@ -211,7 +250,7 @@
       <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
         <div class="service-item position-relative">
           <div class="icon"><i class="bi bi-lightbulb icon"></i></div>
-          <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem? Tenho interesse em consultoria digital, pode me ajudar?" class="stretched-link">Consultoria Digital</a></h4>
+          <h4><a href="{% url 'detalhes_consultoria' %}"  class="stretched-link">Consultoria Digital</a></h4>
           <p>Diagnóstico completo e estratégias personalizadas para transformação digital do seu negócio, com foco em inovação e resultados mensuráveis.</p>
         </div>
       </div><!-- End Service Item -->
@@ -219,7 +258,7 @@
       <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
         <div class="service-item position-relative">
           <div class="icon"><i class="bi bi-geo-alt icon"></i></div>
-          <h4><a href="https://wa.me/5543996341638?text=Oi! Tudo bem? Tenho interesse em otimização do Google Meu Negócio, pode me ajudar?" class="stretched-link">Google Meu Negócio</a></h4>
+          <h4><a href="{% url 'detalhes_negocio' %}" class="stretched-link">Google Meu Negócio</a></h4>
           <p>Estratégias locais avançadas que colocam seu negócio no topo das buscas da sua região, aumentando visitas presenciais e vendas locais.</p>
         </div>
       </div><!-- End Service Item -->

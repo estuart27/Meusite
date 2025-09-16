@@ -91,3 +91,22 @@ def formulario_projeto(request):
     
     return render(request, "OnePage/formulario.html", {"form": form})
 
+
+def detalhes_chatbot(request):
+    return render(request, "OnePage/detalhes_chatbot.html")  # página de sucesso
+
+
+def detalhes_agentes(request):
+    return render(request, "OnePage/detalhes_agentes.html")  
+
+
+def detalhes_site_onepage(request):
+    return render(request, "OnePage/detalhes_site_onepage.html")  
+
+
+def detalhes_negocio(request):
+    return render(request, "OnePage/detalhes_negocio.html")  
+
+
+def detalhes_consultoria(request):
+    return render(request, "OnePage/detalhes_consultoria.html")  

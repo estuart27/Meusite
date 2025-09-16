@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Inteligente - Atenda clientes 24h por dia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header/Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e43c5c 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #e43c5c;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+        }
+
+        .cta-button:hover {
+            background: #e43c5c;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.6);
+        }
+
+        .phone-mockup {
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .phone {
+            width: 280px;
+            height: 560px;
+            background: #000;
+            border-radius: 35px;
+            padding: 15px;
+            margin: 0 auto;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #25d366 0%, #25d366 60px, #ece5dd 60px);
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .whatsapp-header {
+            background: #25d366;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            color: white;
+            font-weight: 500;
+        }
+
+        .chat-messages {
+            padding: 20px 15px;
+            height: calc(100% - 60px);
+            overflow-y: auto;
+        }
+
+        .message {
+            margin-bottom: 12px;
+            display: flex;
+        }
+
+        .message.bot {
+            justify-content: flex-start;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-bubble {
+            max-width: 80%;
+            padding: 8px 12px;
+            border-radius: 18px;
+            font-size: 14px;
+        }
+
+        .message.bot .message-bubble {
+            background: white;
+            color: #333;
+        }
+
+        .message.user .message-bubble {
+            background: #dcf8c6;
+            color: #333;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            color: #1e293b;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e43c5c, #e43c5c);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+
+        .benefit-card p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        /* Free Trial Section */
+        .free-trial {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .free-trial h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #1e293b;
+        }
+
+        .trial-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .trial-feature {
+            padding: 20px;
+            background: #f1f5f9;
+            border-radius: 15px;
+        }
+
+        .trial-feature h4 {
+            color: #e43c5c;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            color: #1e293b;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid #e43c5c;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Mais Escolhido';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #e43c5c;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .plan-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #e43c5c;
+            margin-bottom: 10px;
+        }
+
+        .plan-description {
+            color: #64748b;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .plan-features li {
+            padding: 8px 0;
+            color: #4b5563;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #e43c5c;
+            font-weight: bold;
+        }
+
+        .plan-button {
+            width: 100%;
+            padding: 15px;
+            background: #e43c5c;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .plan-button:hover {
+            background: #e43c5c;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #1e293b;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #4b5563;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #1e293b;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #1e293b;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 30px 25px;
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #e43c5c 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .phone {
+                width: 240px;
+                height: 480px;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Atenda clientes 24h por dia sem precisar de funcionário online</h1>
+                <p>Nosso Chatbot Inteligente aumenta suas vendas, economiza tempo e nunca deixa um cliente sem resposta.</p>
+                <a href="{% url 'formulario' %}" class="cta-button">Teste grátis por 30 dias</a>
+                
+                <div class="phone-mockup">
+                    <div class="phone">
+                        <div class="phone-screen">
+                            <div class="whatsapp-header">
+                                <div>🤖 ChatBot Inteligente</div>
+                            </div>
+                            <div class="chat-messages">
+                                <div class="message user">
+                                    <div class="message-bubble">Olá, gostaria de saber sobre seus produtos</div>
+                                </div>
+                                <div class="message bot">
+                                    <div class="message-bubble">Oi! 😊 Claro! Temos várias opções incríveis. O que você procura?</div>
+                                </div>
+                                <div class="message user">
+                                    <div class="message-bubble">Têm desconto hoje?</div>
+                                </div>
+                                <div class="message bot">
+                                    <div class="message-bubble">Sim! Hoje temos 20% OFF em toda loja! Quer que eu te mostre os produtos?</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Por que escolher nosso Chatbot?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Mais Vendas</h3>
+                    <p>Nunca perca uma oportunidade. Capture leads e converta clientes mesmo quando você não está online.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🕐</div>
+                    <h3>Atendimento 24h</h3>
+                    <p>Seu negócio sempre disponível. Clientes atendidos a qualquer hora, sem custo adicional de funcionários.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💸</div>
+                    <h3>Economia Real</h3>
+                    <p>Reduza drasticamente os custos com atendentes. Um investimento que se paga sozinho.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Respostas Instantâneas</h3>
+                    <p>Experiência do cliente melhorada com respostas rápidas, precisas e personalizadas para seu negócio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Trial Section -->
+    <section class="free-trial">
+        <div class="container">
+            <h2>Teste Grátis por 30 Dias - Zero Compromisso</h2>
+            <div class="trial-features">
+                <div class="trial-feature">
+                    <h4>300 mensagens incluídas</h4>
+                    <p>Teste completo sem limitações</p>
+                </div>
+                <div class="trial-feature">
+                    <h4>Configuração gratuita</h4>
+                    <p>Nós configuramos tudo para você</p>
+                </div>
+                <div class="trial-feature">
+                    <h4>Suporte completo</h4>
+                    <p>Ajuda em tempo real durante o teste</p>
+                </div>
+                <div class="trial-feature">
+                    <h4>Sem fidelidade</h4>
+                    <p>Não gostou? Cancele sem pagar nada</p>
+                </div>
+            </div>
+            <a href="{% url 'formulario' %}" class="cta-button">Começar teste gratuito</a>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <h2>Escolha o plano ideal para seu negócio</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="plan-name">Starter</h3>
+                    <div class="plan-price">R$ 99<span style="font-size: 1rem; color: #64748b;">/mês</span></div>
+                    <p class="plan-description">Perfeito para quem quer começar</p>
+                    <ul class="plan-features">
+                        <li>Até 2.000 mensagens</li>
+                        <li>Atendimento automático 24h</li>
+                        <li>Relatórios simples</li>
+                        <li>Suporte básico via WhatsApp</li>
+                    </ul>
+                    <button class="plan-button">Escolher Starter</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3 class="plan-name">Pro</h3>
+                    <div class="plan-price">R$ 299<span style="font-size: 1rem; color: #64748b;">/mês</span></div>
+                    <p class="plan-description">A escolha das empresas que querem crescer de verdade</p>
+                    <ul class="plan-features">
+                        <li>Mensagens ilimitadas</li>
+                        <li>Integrações com CRM, Agenda, e-mail</li>
+                        <li>Relatórios avançados</li>
+                        <li>Disparo de promoções automáticas</li>
+                        <li>Suporte prioritário</li>
+                        <li>Personalização de fluxos do bot</li>
+                    </ul>
+                    <button class="plan-button">Escolher Pro</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3 class="plan-name">Smart</h3>
+                    <div class="plan-price">R$ 29<span style="font-size: 1rem; color: #64748b;">/mês + R$ 0,10/conversa</span></div>
+                    <p class="plan-description">Flexível para empresas que têm movimento variável</p>
+                    <ul class="plan-features">
+                        <li>Mensagens ilimitadas (pague só pelo uso)</li>
+                        <li>Relatórios completos</li>
+                        <li>Integração com planilhas (Google Sheets)</li>
+                        <li>Suporte padrão</li>
+                    </ul>
+                    <button class="plan-button">Escolher Smart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Nunca mais perdi cliente fora do horário! O bot responde na hora e eu acordo com vendas feitas."</p>
+                    <p class="testimonial-author">- Marina Silva, Loja de Roupas</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Economizei horas de atendimento manual. Agora posso focar no que realmente importa: fazer o negócio crescer."</p>
+                    <p class="testimonial-author">- Carlos Mendes, Restaurante</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"O bot aumentou minhas vendas em 30%! Os clientes adoram o atendimento rápido e personalizado."</p>
+                    <p class="testimonial-author">- Ana Costa, Consultoria</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    Preciso de conhecimento técnico para usar?
+                </div>
+                <div class="faq-answer">
+                    Não! Nós configuramos tudo para você. Você só precisa nos contar sobre seu negócio e nós criamos o chatbot perfeito para suas necessidades.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    Posso cancelar quando quiser?
+                </div>
+                <div class="faq-answer">
+                    Sim, sem fidelidade e sem multa. Você pode cancelar a qualquer momento e não será cobrado no próximo mês.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    Funciona para qualquer tipo de negócio?
+                </div>
+                <div class="faq-answer">
+                    Sim! Adaptamos o chatbot para seu segmento: loja, restaurante, consultoria, serviços, e-commerce. Cada bot é personalizado para seu negócio.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    Como funciona a integração com WhatsApp?
+                </div>
+                <div class="faq-answer">
+                    É simples e rápida. Conectamos seu número do WhatsApp Business ao nosso sistema em poucos minutos. Seus clientes continuam conversando normalmente.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Pronto para transformar o atendimento do seu negócio?</h2>
+            <p>Teste grátis por 30 dias e veja os resultados sem compromisso.</p>
+            <a href="{% url 'formulario' %}" class="cta-button">Quero começar agora</a>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.querySelector('.faq-answer').style.display = 'none';
+                    }
+                });
+                
+                // Toggle current FAQ item
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.benefit-card, .pricing-card, .testimonial, .faq-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
