@@ -1,5 +1,6 @@
 # Ignorar arquivos de ambiente
 .env
+*venv
 
 # Ignorar arquivos de banco de dados
 *.sqlite3
