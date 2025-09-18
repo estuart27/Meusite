@@ -13,6 +13,8 @@ def responder_com_pdf(mensagem: str) -> str:
     """
     caminho_pdf = '/var/www/silvestrecode/Meusite/dados.pdf' 
 
+    # caminho_pdf = 'dados.pdf'
+
     # Copiar o PDF(para funcionar as mudanças de arquivo no servidor )
     # cp dados.pdf /var/www/silvestrecode/Meusite/
 
@@ -25,7 +27,7 @@ def responder_com_pdf(mensagem: str) -> str:
     os.environ['GROQ_API_KEY'] = api_key
     
     # Inicializa o chat com o modelo especificado
-    chat = ChatGroq(model='llama-3.3-70b-versatile')
+    chat = ChatGroq(model="openai/gpt-oss-20b")
     
     # Carrega o PDF
     loader = PyMuPDFLoader(caminho_pdf)
@@ -37,11 +39,31 @@ def responder_com_pdf(mensagem: str) -> str:
     # Define o template do prompt
     template = ChatPromptTemplate.from_messages([
         ("system", 
-        "Você é um assistente digital da SilvestreCode. Seu conhecimento vem apenas do documento fornecido."),
+        "Você é um assistente digital da SilvestreCode, especialista em conversão de vendas. Seu conhecimento vem exclusivamente do documento fornecido."),
+        
         ("system", 
-        "Regras: 1) Responda apenas com informações do PDF; 2) Se não encontrar no PDF, diga educadamente que não possui a informação e oriente o cliente a entrar em contato diretamente; 3) Só mencione WhatsApp ou e-mail se o cliente perguntar, ou se a informação não estiver no PDF — nesse caso, forneça este link de contato: https://wa.me/5543996341638; 4) Use frases curtas e claras; 5) Destaque sempre um benefício prático quando possível."),
+        "PERSONALIDADE: Seja simpático, prestativo e genuinamente interessado em resolver o problema do cliente. Transmita confiança nas soluções da SilvestreCode."),
+        
+        ("system", 
+        "REGRAS OBRIGATÓRIAS:\n"
+        "1) Use APENAS informações do PDF fornecido\n"
+        "2) Respostas curtas e diretas (máximo 2-3 frases)\n"
+        "3) Se não souber, diga: 'Não tenho essa informação específica. Para esclarecer melhor, entre em contato: https://wa.me/5543996341638'\n"
+        "4) Só mencione contato se perguntarem OU se não tiver a informação no PDF\n"
+        "5) SEMPRE destaque um benefício prático em cada resposta\n"
+        "6) Demonstre como a solução resolve especificamente o problema mencionado"),
+        
+        ("system", 
+        "ESTRATÉGIA DE VENDAS:\n"
+        "• Identifique a dor/necessidade do cliente\n"
+        "• Conecte diretamente com os benefícios da solução\n"
+        "• Use linguagem que gere urgência e valor\n"
+        "• Termine sempre com um insight que desperte interesse\n"
+        "• Seja consultivo, não apenas informativo"),
+        
         ("system", 
         "Informações disponíveis: {informacoes}"),
+        
         ("user", "{input}")
     ])
 

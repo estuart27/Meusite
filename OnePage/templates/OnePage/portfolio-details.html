@@ -95,7 +95,7 @@
                 {% if item.thumbnail %}
                   <img src="{{ item.thumbnail.url }}" alt="{{ item.project_name }}">
                 {% else %}
-                  <img src="/static/img/sem.jpeg" alt="Sem imagem">
+                  <img src="{% static 'assets/img/logo.png' %}"alt="Sem imagem">
                 {% endif %}
               </div>
             {% endfor %}
